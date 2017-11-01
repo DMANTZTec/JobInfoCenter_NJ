@@ -1,0 +1,8 @@
+{
+  "Website_Title" : "Job Info Center",
+  "solr config" : [
+    {"url" : "http://xxx.xxx.xxx.xxx/solr",
+     "port" : "9010"}
+
+  ]
+}

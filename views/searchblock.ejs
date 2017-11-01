@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+  <form id="jobsearchform" method="post">
+    <div class="form-group">
+      <input type="hidden" id="hiddensearch">
+      <input type="text"  class="form-control_input-lg"  id="txt-search" name="searchinput" placeholder="Type your search characters">
+      <button id="sh" type='button' onclick="fa_search()" style="position: absolute; right: 300px;top:50px" Value="GO">Go</button>
+    </div>
+    <h2>Result &nbsp;&nbsp;
+      <img src="images/Filter.png" ></h2>
+
+    <h2>
+      <img class="share" src="images/icons8-Share-50.png">
+    </h2>
+
+
+  </form>
+  <div id=resultbox style="border:1px solid black;width:700px;height:300px;overflow:scroll;">
+    <div id="filter-records"></div>
+  </div>
+  <div id="left"></div>
+  <div id="right"></div>
+  <div id="outerbox"><P></P>
+  </div>
+
