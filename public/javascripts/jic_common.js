@@ -4,6 +4,7 @@ function fa_search()
     var xhttp= new XMLHttpRequest();
 
     var url="http://date.jsontest.com/";
+    //var url="/search";
     console.log(document.getElementById("jobsearchform").elements.namedItem("searchinput").value)
 
     var myarr={searchtext:document.getElementById("txt-search").value,operationtype:document.getElementById("hiddensearch").value};
