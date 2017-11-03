@@ -2,8 +2,8 @@ function fa_search()
 {
     console.log("In fa_search()");
     var xhttp= new XMLHttpRequest();
-
-    var url="http://date.jsontest.com/";
+    var url="http://localhost:3010/search";
+    //var url="http://date.jsontest.com/";
     console.log(document.getElementById("jobsearchform").elements.namedItem("searchinput").value);
 
     var myarr={searchtext:document.getElementById("txt-search").value,operationtype:document.getElementById("hiddensearch").value};
@@ -26,29 +26,27 @@ function fa_search()
     {
         if ((this.readyState == 4) && (this.status == 200)) {
             console.log("after getting response" + xhttp.responseText);
-
-
             var my=JSON.parse(this.responseText);
-
+            var my1=my.docs;
             document.getElementById('resultbox').innerHTML =null;
-
-            //for(i=0;i<my.length;i++)
-            //{
+            for(i=0;i<my1.length;i++)
+            {
               //  console.log("Current Date:" + my[i].date);
                 document.getElementById('resultbox').innerHTML+= '<div class="row"style="border: 1px solid;">'
                 document.getElementById('resultbox').innerHTML +='<input type="checkbox" class="checkbox" style="float:right;">';
                 //document.getElementById('resultbox').innerHTML+="Id:"+my[i].id+"<br/>";
-                document.getElementById('resultbox').innerHTML+="Time:"+my.time+"<br/>";
-                document.getElementById('resultbox').innerHTML+="Date:"+my.date+"<br/>";
+               // document.getElementById('resultbox').innerHTML+="Time:"+my.time+"<br/>";
+               // document.getElementById('resultbox').innerHTML+="Date:"+my.date+"<br/>";
                 //document.getElementById('resultbox').innerHTML+="Id:"+my[i].date+"<br/>";
-                //document.getElementById('resultbox').innerHTML+="Jobtitle:"+my[i].jobtitle+"<br/>";
-                //document.getElementById('resultbox').innerHTML+="Education:"+my[i].education+"<br/>";
-                //document.getElementById('resultbox').innerHTML+="Salary:"+my[i].salary+"<br/>";
-                //document.getElementById('resultbox').innerHTML+="Experience:"+my[i].experience+"<br/>";
-                //document.getElementById('resultbox').innerHTML+="Jobdescription:"+my[i].jobdescription+"<br/>";
-                //document.getElementById('resultbox').innerHTML +='<input type="checkbox" class="checkbox style="float:right;">';
+                document.getElementById('resultbox').innerHTML+="Jobtitle:"+my1[i].jobtitle+"<br/>";
+                document.getElementById('resultbox').innerHTML+="Education:"+my1[i].education+"<br/>";
+                document.getElementById('resultbox').innerHTML+="Salary:"+my1[i].salary+"<br/>";
+                document.getElementById('resultbox').innerHTML+="Experience:"+my1[i].experience+"<br/>";
+                document.getElementById('resultbox').innerHTML+="Qualification:"+my1[i].qualification+"<br/>";
+                document.getElementById('resultbox').innerHTML+="Jobdescription:"+my1[i].jobdescription+"<br/>";
+                document.getElementById('resultbox').innerHTML +='<input type="checkbox" class="checkbox style="float:right;">';
                 document.getElementById('resultbox').innerHTML +=  '</div>';
-            //}
+            }
 
             //document.getElementById('resultbox').innerHTML=xhttp.responseText;
             //console.log(xhttp.responseText);
