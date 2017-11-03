@@ -5,7 +5,15 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <ul>
+      <% result.docs.forEach(function(item)
+      {%>
+    <li><%= "ID:" +item.id%></li>
+    <li><%="FirstName:"+item.firstname%></li>
+    <li><%="LastName:"+item.lastname%></li>
+    <li><%="Town:"+item.town%></li>
+      <%});%>
+  </ul>
+
   </body>
 </html>
