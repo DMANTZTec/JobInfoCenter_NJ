@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var login = require('./routes/login');
+//var login = require('./routes/login');
 var search = require('./routes/search');
 var home = require('./routes/home');
 var adbanner = require('./public/javascripts/adbanner');
