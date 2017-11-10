@@ -5,13 +5,17 @@
   <link rel='stylesheet' href='/stylesheets/livesearch2.css' />
   <link rel='stylesheet' href='/stylesheets/login1.css' />
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+  <meta name="google-signin-client_id"
+        content="31385970367-j36kfmj16fap18joh8prg23g6ileh721.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
   <script src="javascripts/jic_common.js"> </script>
 </head>
-<body>
+<body onload="GenerateCaptcha();">
 <div class="container" style="padding:50px 250px;">
+    <% include login  %>
     <% include searchblock %>
     <% include adsliderbox %>
-    <% include login  %>
 </div>
 </body>
 </html>

@@ -1,14 +1,7 @@
-<html>
-<head>
-    <meta name="google-signin-client_id"
-          content="31385970367-j36kfmj16fap18joh8prg23g6ileh721.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    <link rel="stylesheet" href="login1.css">
-    <script src="jic_common.js"></script>
-</head>
-<body onload="GenerateCaptcha();" >
-<button id="btn" onclick="loginform();">
-    <img class="logo" src="../images/signin1.png" width="20px" height="20px" top="75px"float="right"> </button>
+<div id="SignInIcon">
+<button onclick="loginform();">
+    <img src="../images/signin1.png" > </button>
+</div>
 <div  id="login1" style="display: none;">
     <div id="demo"></div>
     <div id="login" class="nm-label" style="text-align: ;"><span id="sub_login">Login<br/></span></div>
@@ -29,6 +22,7 @@
 
     <a href="#" onclick="fbLogin()" id="fbLink"><img src="../images/LoginWithFacebook.png"/></a>
 </div>
+<!--
 <div class="aClassOfYourOwn"></div>
 <a href="#" id="sgnout"  onclick="signOut()" >Sign out </a>
 <a href="#" id="fbLink1"></a>
@@ -40,5 +34,5 @@
         <button id="lgout" type="submit" onclick="logout();">logout</button>
     </div>
 </div>
-</body>
-</html>
+
+-->
