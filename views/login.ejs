@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta name="google-signin-client_id"
+          content="31385970367-j36kfmj16fap18joh8prg23g6ileh721.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <link rel="stylesheet" href="login1.css">
+    <script src="jic_common.js"></script>
+</head>
+<body onload="GenerateCaptcha();" >
+<button id="btn" onclick="loginform();">
+    <img class="logo" src="../images/signin1.png" width="20px" height="20px" top="75px"float="right"> </button>
+<div  id="login1" style="display: none;">
+    <div id="demo"></div>
+    <div id="login" class="nm-label" style="text-align: ;"><span id="sub_login">Login<br/></span></div>
+    <input type="text" id="userid" placeholder="User Name" class="form-control" /><p>
+        <input type="password" id="pass" placeholder="Password" class="form-control" /><br>
+        <input id="cbox" type="checkbox" checked />Remember me<br>
+        Enter the Captcha Text:
+        <input type="text" id="txtCompare" />
+        <input type="text" id="txtCaptcha" style="text-align: center; border: none; font-weight: bold; font-size: 20px; font-family: Modern" />
+        <input type="button"  id="captcha_image"  onclick="GenerateCaptcha();" />
+        <button type="submit" onclick="validatelogin()" >submit</button>
+    <div id="forgot" class="nm-label">
+        <a id="f1" href="#">Forgot User Name Or Password</a></div>
+    <div id="register" class="nm-label"><a id="register1" href="#">Register new User</a></div>
+    <div id="or" class="nm-label"><span id="or1">OR<br/></span></div>
+    <!--<div id="google"></div> -->
+    <div id="my-signin2"></div>
+
+    <a href="#" onclick="fbLogin()" id="fbLink"><img src="../images/LoginWithFacebook.png"/></a>
+</div>
+<div class="aClassOfYourOwn"></div>
+<a href="#" id="sgnout"  onclick="signOut()" >Sign out </a>
+<a href="#" id="fbLink1"></a>
+<div id="status" ></div>
+<div id="userData"></div>
+<div id='frm2'>
+    <div id="frm1" > </div>
+    <div  id="logout" style="display: none;" >
+        <button id="lgout" type="submit" onclick="logout();">logout</button>
+    </div>
+</div>
+</body>
+</html>
