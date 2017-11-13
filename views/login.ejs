@@ -1,13 +1,23 @@
+
 <div id="SignInIcon">
-<button onclick="loginform();">
-    <img src="../images/signin1.png" > </button>
+<button id="btn" onclick="loginform();">
+    <img src="/images/signin1.png" style="width: 20px;height: 20px" >
+</button>
 </div>
+
 <div  id="login1" style="display: none;">
     <div id="demo"></div>
-    <div id="login" class="nm-label" style="text-align: ;"><span id="sub_login">Login<br/></span></div>
-    <input type="text" id="userid" placeholder="User Name" class="form-control" /><p>
-        <input type="password" id="pass" placeholder="Password" class="form-control" /><br>
-        <input id="cbox" type="checkbox" checked />Remember me<br>
+    <div id="login" class="nm-label" style="text-align:center;">
+        <span id="sub_login">Login<br/></span>
+    </div>
+    <input type="text" id="userid" placeholder="User Name" />
+    <p></p>
+
+    <input type="password" id="pass" placeholder="Password"/>
+    <p></p>
+    <input id="cbox" type="checkbox" checked />
+    Remember me
+    <p></p>
         Enter the Captcha Text:
         <input type="text" id="txtCompare" />
         <input type="text" id="txtCaptcha" style="text-align: center; border: none; font-weight: bold; font-size: 20px; font-family: Modern" />
@@ -20,7 +30,8 @@
     <!--<div id="google"></div> -->
     <div id="my-signin2"></div>
 
-    <a href="#" onclick="fbLogin()" id="fbLink"><img src="../images/LoginWithFacebook.png"/></a>
+    <a href="#" onclick="fbLogin()" id="fbLink"><img src="/images/LoginWithFacebook.png"/></a>
+
 </div>
 <!--
 <div class="aClassOfYourOwn"></div>

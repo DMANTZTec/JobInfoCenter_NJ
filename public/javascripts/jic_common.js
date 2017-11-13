@@ -70,6 +70,8 @@ function loginform(){
         ele.style.display = 'block';
         document.getElementById('btn').style.display='none';
     }
+    GenerateCaptcha();
+    console.log("After Generate Captcha");
 }
 function logout(){
     document.getElementById('userid').value="";
@@ -179,6 +181,7 @@ function validatelogin() {
         ele.style.display = 'none';
     }
 
+}
 
     function GenerateCaptcha() {
         var chr1 = Math.ceil(Math.random() * 10) + '';
@@ -363,5 +366,4 @@ function validatelogin() {
 
         });
     }
-}
 
