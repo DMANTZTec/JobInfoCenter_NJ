@@ -7,9 +7,10 @@
 
 <div  id="login1" style="display: none;">
     <div id="demo"></div>
-    <div id="login" class="nm-label" style="text-align:center;">
-        <span id="sub_login">Login<br/></span>
+    <div id="login" style="text-align:center;">
+        <span id="sub_login">Login</span>
     </div>
+    <p></p>
     <input type="text" id="userid" placeholder="User Name" />
     <p></p>
 
@@ -18,19 +19,26 @@
     <input id="cbox" type="checkbox" checked />
     Remember me
     <p></p>
-        Enter the Captcha Text:
-        <input type="text" id="txtCompare" />
-        <input type="text" id="txtCaptcha" style="text-align: center; border: none; font-weight: bold; font-size: 20px; font-family: Modern" />
+         <input type="text" id="txtCompare" placeholder="Enter Captha Text"/>
+        <input type="text" id="txtCaptcha" />
         <input type="button"  id="captcha_image"  onclick="GenerateCaptcha();" />
-        <button type="submit" onclick="validatelogin()" >submit</button>
-    <div id="forgot" class="nm-label">
+     <p></p>
+        <button type="submit" id="loginSubmitBtn" onclick="validatelogin()" >submit</button>
+    <div id="forgot">
         <a id="f1" href="#">Forgot User Name Or Password</a></div>
-    <div id="register" class="nm-label"><a id="register1" href="#">Register new User</a></div>
-    <div id="or" class="nm-label"><span id="or1">OR<br/></span></div>
+    <div id="register"><a id="register1" href="#">Register new User</a></div>
+    <div id="or"><span id="or1">OR<br/></span></div>
     <!--<div id="google"></div> -->
-    <div id="my-signin2"></div>
+    <div id="googlelogin"> <script>renderGoogleLoginOption()</script>
+    </div>
+    <P></P>
 
-    <a href="#" onclick="fbLogin()" id="fbLink"><img src="/images/LoginWithFacebook.png"/></a>
+    <div id="fblogin">
+    <a href="#" onclick="fbLogin()"  id="fbLink">
+        <img class="fbloginLink" src="/images/LoginWithFacebook.png"/>
+    </a>
+    </div>
+
 
 </div>
 <!--
