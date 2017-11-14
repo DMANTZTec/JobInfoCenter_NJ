@@ -280,10 +280,14 @@ function validatelogin() {
 
     function fbLogin() {
 
+        //document.getElementById('JobSearchForm').style.display='none';
         //document.getElementById('status').style.display='none';
         FB.login(function (response) {
-            if (response.authResponse) {
-                logintype = "Yes";
+            document.getElementById('btn').style.display = "none";
+            document.getElementById('login1').style.display = "none";
+           if (response.authResponse) {
+
+               /*logintype = "Yes";
                 var xhttp = new XMLHttpRequest();
                 var url = "http://192.168.100.7:8082/login/Login";
                 var myarr = {
@@ -308,9 +312,11 @@ function validatelogin() {
                 };
                 console.log("before sending request");
                 xhttp.send(params);
+                */
 
                 // Get and display the user profile data
                 //document.getElementById('login1').style.display='none';
+
                 getFbUserData();
 
 
@@ -327,7 +333,9 @@ function validatelogin() {
         FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
             function (response) {
 
+                document.getElementById('btn').style.display = "none";
                 document.getElementById('login1').style.display = "none";
+                // document.getElementById('SignInIcon').style.display = "none";
                 document.getElementById('fbLink1').setAttribute("onclick", "fbLogout()");
                 document.getElementById('fbLink1').innerHTML = 'Logout from Facebook';
                 document.getElementById('userData').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
@@ -358,6 +366,7 @@ function validatelogin() {
             document.getElementById('fbLink').innerHTML = '<img src="../images/LoginWithFacebook.png"/>';
             document.getElementById('userData').innerHTML = '';
             document.getElementById('btn').style.display = "block";
+            //document.getElementById('SignInIcon').style.display = "block";
 
 
             //document.getElementById('status').innerHTML = 'You have successfully logout from Facebook.';
