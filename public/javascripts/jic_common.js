@@ -121,8 +121,6 @@ function validatelogin() {
         document.getElementById("demo").innerHTML = "please enter correct captchcode";
 
     else {
-        document.getElementById("btn").style.display='none';
-        document.getElementById("login1").style.display='none';
         console.log("In checkform()");
         var xhttp = new XMLHttpRequest();
         var url = "http://192.168.100.7:8082/login/Login";
@@ -130,27 +128,23 @@ function validatelogin() {
             User: document.getElementById("userid").value,
             password: document.getElementById("pass").value
         };
-        var params = JSON.stringify(myarr);
-        console.log(params);
-        var params = "inputJsonStr" + "=" + params;
-        xhttp.open("POST", url, true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.onreadystatechange = function () {
-            if ((this.readyState == 4) && (this.status == 200)) {
-                console.log("after getting response" + xhttp.responseText);
-                var my = JSON.parse(this.responseText);
-               // var name='vandana';
-               // document.getElementById("SignInIcon").innerHTML = "Welcome" +name;
-              //  var el = document.getElementById('lgout');
-              //  if (el.style.display == 'none') {
-                //    el.style.display = 'block';
-                //}
-                }
-        };
-        console.log("before sending request");
-        xhttp.send(params);
     }
+    var params = JSON.stringify(myarr);
+    console.log(params);
+    var params = "inputJsonStr" + "=" + params;
+    xhttp.open("POST", url, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.onreadystatechange = function () {
+        if ((this.readyState == 4) && (this.status == 200)) {
+            console.log("after getting response" + xhttp.responseText);
+            var my = JSON.parse(this.responseText);
+        }
+    };
+    console.log("before sending request");
+    xhttp.send(params);
 }
+}
+
     function GenerateCaptcha() {
         var chr1 = Math.ceil(Math.random() * 10) + '';
         var chr2 = Math.ceil(Math.random() * 10) + '';
@@ -168,8 +162,6 @@ function validatelogin() {
     function removeSpaces(string) {
         return string.split(' ').join('');
     }
-
-
 
     function onSuccess(googleUser) {
         document.getElementById('login1').style.display = 'none';
@@ -204,6 +196,7 @@ function validatelogin() {
             'onfailure': onFailure
         });
     }
+
     function signOut() {
         //document.getElementById('gglg').setAttribute("onclick","onSignIn()");
         //document.getElementById('btn').style.display='none';
@@ -217,6 +210,7 @@ function validatelogin() {
         });
     }
 
+
     window.fbAsyncInit = function () {
         // FB JavaScript SDK configuration and setup
         FB.init({
@@ -227,8 +221,8 @@ function validatelogin() {
         });
         // Check whether the user already logged in
         FB.getLoginStatus(function (response) {
-            if (response.status === 'connected')
-            {
+            if (response.status === 'connected') {
+                "welcome"
                 //display user data
                 getFbUserData();
             }
@@ -246,54 +240,24 @@ function validatelogin() {
 
     // Facebook login with JavaScript SDK
 
-function fbLogin()
-{
-        FB.login(function (response)
-        {
-            document.getElementById('btn').style.display = "none";
-            document.getElementById('login1').style.display = "none";
-           if (response.authResponse)
-           {
-                getFbUserData();
-           }
-            else
-           {
-                document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
-           }
-        }, {scope: 'email'});
-    }
+    function fbLogin() {
 
-    // Fetch the user profile data from facebook
-    function getFbUserData() {
-
-        FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
-            function (response) {
-
-                document.getElementById('btn').style.display = "none";
-                document.getElementById('login1').style.display = "none";
-                // document.getElementById('SignInIcon').style.display = "none";
-                document.getElementById('fbLink1').setAttribute("onclick", "fbLogout()");
-                document.getElementById('fbLink1').innerHTML = 'Logout from Facebook';
-                document.getElementById('userData').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
-                document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '
-                    + response.id + '</p><p><b>Name:</b> ' + response.first_name + ' '
-                    + response.last_name + '</p><p><b>Email:</b> '
-                    + response.email + '</p><p><b>Gender:</b> '
-                    + response.gender + '</p><p><b>Locale:</b> '
-                    + response.locale + '</p><p><b>Picture:</b> <img src="'
-                    + response.picture.data.url + '"/></p><p><b>FB Profile:</b> <a target="_blank" href="'
-                    + response.link + '">click to view profile</a></p>';
-                facebookmailid = response.email;
-                facebookuser = response.first_name  + response.last_name;
-                facebookid = response.id;
-                //document.getElementById('userData').innerHTML = facebookid;
+        //document.getElementById('status').style.display='none';
+        FB.login(function (response) {
+            if (response.authResponse) {
+                logintype = "Yes";
                 var xhttp = new XMLHttpRequest();
                 var url = "http://192.168.100.7:8082/login/Login";
                 var myarr = {
-                    fbusername: facebookuser,
-                    fbmailid: facebookmailid,
-                    fbuserid: facebookid};
+                    thirdparty: logintype,
+                    externallogininfo: {
+                        username: facebookuser,
+                        userid: facebookid,
+                        provider: "facebook"
+                    }
+                };
                 var params = JSON.stringify(myarr);
+
                 console.log(params);
                 var params = "inputJsonStr" + "=" + params;
                 xhttp.open("POST", url, true);
@@ -306,6 +270,42 @@ function fbLogin()
                 };
                 console.log("before sending request");
                 xhttp.send(params);
+
+                // Get and display the user profile data
+                //document.getElementById('login1').style.display='none';
+                getFbUserData();
+
+
+            }
+            else {
+                document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
+            }
+        }, {scope: 'email'});
+    }
+
+    // Fetch the user profile data from facebook
+    function getFbUserData() {
+
+        FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
+            function (response) {
+
+                document.getElementById('login1').style.display = "none";
+                document.getElementById('fbLink1').setAttribute("onclick", "fbLogout()");
+                document.getElementById('fbLink1').innerHTML = 'Logout from Facebook';
+                document.getElementById('userData').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
+                document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '
+                    + response.id + '</p><p><b>Name:</b> ' + response.first_name + ' '
+                    + response.last_name + '</p><p><b>Email:</b> '
+                    + response.email + '</p><p><b>Gender:</b> '
+                    + response.gender + '</p><p><b>Locale:</b> '
+                    + response.locale + '</p><p><b>Picture:</b> <img src="'
+                    + response.picture.data.url + '"/></p><p><b>FB Profile:</b> <a target="_blank" href="'
+                    + response.link + '">click to view profile</a></p>';
+                facebookid = response.email;
+                facebookuser = response.first_name + response.last_name
+                //document.getElementById('userData').innerHTML = facebookid;
+
+
             });
     }
 
@@ -320,7 +320,6 @@ function fbLogin()
             document.getElementById('fbLink').innerHTML = '<img src="../images/LoginWithFacebook.png"/>';
             document.getElementById('userData').innerHTML = '';
             document.getElementById('btn').style.display = "block";
-            //document.getElementById('SignInIcon').style.display = "block";
 
 
             //document.getElementById('status').innerHTML = 'You have successfully logout from Facebook.';
