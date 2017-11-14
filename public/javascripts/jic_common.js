@@ -121,68 +121,36 @@ function validatelogin() {
         document.getElementById("demo").innerHTML = "please enter correct captchcode";
 
     else {
-
-        var logintype = "";
-
-
-        if (document.getElementById('my-signin2').click()) {
-            provider = 'google';
-            username = "";
-            //USERID="document.getElementsByClassName("aClassOfYourOwn")";
-            logintype = "Yes";
-        }
-        else if (document.getElementById('fbLink').click()) {
-            provider = 'facebook';
-            username = "facebookuser";
-            USERID = "facebookid";
-            logintype = "Yes";
-        }
-        else
-            logintype = "no";
-
+        document.getElementById("btn").style.display='none';
+        document.getElementById("login1").style.display='none';
         console.log("In checkform()");
         var xhttp = new XMLHttpRequest();
         var url = "http://192.168.100.7:8082/login/Login";
         var myarr = {
             User: document.getElementById("userid").value,
-            password: document.getElementById("pass").value,
-            thirdparty: logintype,
-            //externallogininfo:{
-            //	username:""
-            //	userid:""
-            //	provider:""
-            //}
-
+            password: document.getElementById("pass").value
         };
+        var params = JSON.stringify(myarr);
+        console.log(params);
+        var params = "inputJsonStr" + "=" + params;
+        xhttp.open("POST", url, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.onreadystatechange = function () {
+            if ((this.readyState == 4) && (this.status == 200)) {
+                console.log("after getting response" + xhttp.responseText);
+                var my = JSON.parse(this.responseText);
+               // var name='vandana';
+               // document.getElementById("SignInIcon").innerHTML = "Welcome" +name;
+              //  var el = document.getElementById('lgout');
+              //  if (el.style.display == 'none') {
+                //    el.style.display = 'block';
+                //}
+                }
+        };
+        console.log("before sending request");
+        xhttp.send(params);
     }
-
-    var params = JSON.stringify(myarr);
-    console.log(params);
-    var params = "inputJsonStr" + "=" + params;
-    xhttp.open("POST", url, true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.onreadystatechange = function () {
-        if ((this.readyState == 4) && (this.status == 200)) {
-            console.log("after getting response" + xhttp.responseText);
-            var my = JSON.parse(this.responseText);
-        }
-    };
-    console.log("before sending request");
-    xhttp.send(params);
-
-    var user = "vandana";
-    document.getElementById('frm1').innerHTML = 'welcome' + user;
-    var el = document.getElementById('logout');
-    if (el.style.display == 'none') {
-        el.style.display = 'block';
-    }
-    var ele = document.getElementById('login1');
-    if (ele.style.display == 'block') {
-        ele.style.display = 'none';
-    }
-
 }
-
     function GenerateCaptcha() {
         var chr1 = Math.ceil(Math.random() * 10) + '';
         var chr2 = Math.ceil(Math.random() * 10) + '';
@@ -200,6 +168,8 @@ function validatelogin() {
     function removeSpaces(string) {
         return string.split(' ').join('');
     }
+
+
 
     function onSuccess(googleUser) {
         document.getElementById('login1').style.display = 'none';
@@ -234,7 +204,6 @@ function validatelogin() {
             'onfailure': onFailure
         });
     }
-
     function signOut() {
         //document.getElementById('gglg').setAttribute("onclick","onSignIn()");
         //document.getElementById('btn').style.display='none';
@@ -248,7 +217,6 @@ function validatelogin() {
         });
     }
 
-
     window.fbAsyncInit = function () {
         // FB JavaScript SDK configuration and setup
         FB.init({
@@ -259,8 +227,8 @@ function validatelogin() {
         });
         // Check whether the user already logged in
         FB.getLoginStatus(function (response) {
-            if (response.status === 'connected') {
-                "welcome"
+            if (response.status === 'connected')
+            {
                 //display user data
                 getFbUserData();
             }
@@ -278,52 +246,20 @@ function validatelogin() {
 
     // Facebook login with JavaScript SDK
 
-    function fbLogin() {
-
-        //document.getElementById('JobSearchForm').style.display='none';
-        //document.getElementById('status').style.display='none';
-        FB.login(function (response) {
+function fbLogin()
+{
+        FB.login(function (response)
+        {
             document.getElementById('btn').style.display = "none";
             document.getElementById('login1').style.display = "none";
-           if (response.authResponse) {
-
-               /*logintype = "Yes";
-                var xhttp = new XMLHttpRequest();
-                var url = "http://192.168.100.7:8082/login/Login";
-                var myarr = {
-                    thirdparty: logintype,
-                    externallogininfo: {
-                        username: facebookuser,
-                        userid: facebookid,
-                        provider: "facebook"
-                    }
-                };
-                var params = JSON.stringify(myarr);
-
-                console.log(params);
-                var params = "inputJsonStr" + "=" + params;
-                xhttp.open("POST", url, true);
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.onreadystatechange = function () {
-                    if ((this.readyState == 4) && (this.status == 200)) {
-                        console.log("after getting response" + xhttp.responseText);
-                        var my = JSON.parse(this.responseText);
-                    }
-                };
-                console.log("before sending request");
-                xhttp.send(params);
-                */
-
-                // Get and display the user profile data
-                //document.getElementById('login1').style.display='none';
-
+           if (response.authResponse)
+           {
                 getFbUserData();
-
-
-            }
-            else {
+           }
+            else
+           {
                 document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
-            }
+           }
         }, {scope: 'email'});
     }
 
@@ -347,11 +283,29 @@ function validatelogin() {
                     + response.locale + '</p><p><b>Picture:</b> <img src="'
                     + response.picture.data.url + '"/></p><p><b>FB Profile:</b> <a target="_blank" href="'
                     + response.link + '">click to view profile</a></p>';
-                facebookid = response.email;
-                facebookuser = response.first_name + response.last_name
+                facebookmailid = response.email;
+                facebookuser = response.first_name  + response.last_name;
+                facebookid = response.id;
                 //document.getElementById('userData').innerHTML = facebookid;
-
-
+                var xhttp = new XMLHttpRequest();
+                var url = "http://192.168.100.7:8082/login/Login";
+                var myarr = {
+                    fbusername: facebookuser,
+                    fbmailid: facebookmailid,
+                    fbuserid: facebookid};
+                var params = JSON.stringify(myarr);
+                console.log(params);
+                var params = "inputJsonStr" + "=" + params;
+                xhttp.open("POST", url, true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.onreadystatechange = function () {
+                    if ((this.readyState == 4) && (this.status == 200)) {
+                        console.log("after getting response" + xhttp.responseText);
+                        var my = JSON.parse(this.responseText);
+                    }
+                };
+                console.log("before sending request");
+                xhttp.send(params);
             });
     }
 
