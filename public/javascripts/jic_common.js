@@ -120,8 +120,10 @@ function validatelogin() {
     else if (str1 != str2)
         document.getElementById("demo").innerHTML = "please enter correct captchcode";
 
-    else {
-        document.getElementById("btn").style.display='none';
+    else
+        {
+            console.log("before request");
+            document.getElementById("btn").style.display='none';
         document.getElementById("login1").style.display='none';
         console.log("In checkform()");
         var xhttp = new XMLHttpRequest();
@@ -130,6 +132,7 @@ function validatelogin() {
             User: document.getElementById("userid").value,
             password: document.getElementById("pass").value
         };
+
         var params = JSON.stringify(myarr);
         console.log(params);
         var params = "inputJsonStr" + "=" + params;
