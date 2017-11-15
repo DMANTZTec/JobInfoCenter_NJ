@@ -4,16 +4,32 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var MySQLStore = require('express-mysql-session');
+var session = require('express-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
-//var login = require('./routes/login');
+var login = require('./routes/login');
+var loginSuccess = require('./routes/loginSuccess');
 var search = require('./routes/search');
 var home = require('./routes/home');
 var adbanner = require('./public/javascripts/adbanner');
+var externalLogin = require('./routes/externalLogin');
 
 var app = express();
-
+var options = {
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    password: 'secret',
+    database: 'test'
+};
+var sessionStore = new MySQLStore(options);
+app.use(session({
+    secret: '2C44-4D44-W',
+    store:sessionStore,
+    resave: false,
+    saveUninitialized: false
+}));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -29,12 +45,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/search',search);
 app.use('/home',home);
-//app.use('/login',login);
+app.use('/login', login);
+app.use('/externalLogin', externalLogin);
+
+app.use('/loginSuccess', loginSuccess);
 //app.use('/adbanner',adbanner);
-
-
 //app.use('/users', users);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

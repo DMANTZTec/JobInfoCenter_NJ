@@ -59,10 +59,6 @@ function fa_search()
     console.log("before sending request");
     xhttp.send(params);
 }
-
-
-
-
 function loginform(){
     var ele = document.getElementById('login1');
     if(ele.style.display == 'none')
@@ -127,7 +123,7 @@ function validatelogin() {
         document.getElementById("login1").style.display='none';
         console.log("In checkform()");
         var xhttp = new XMLHttpRequest();
-        var url = "http://192.168.100.7:8082/login/Login";
+            var url="http://localhost:3010/login";
         var myarr = {
             User: document.getElementById("userid").value,
             password: document.getElementById("pass").value
@@ -141,7 +137,7 @@ function validatelogin() {
         xhttp.onreadystatechange = function () {
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
-                var my = JSON.parse(this.responseText);
+                //var my = JSON.parse(this.responseText);
                // var name='vandana';
                // document.getElementById("SignInIcon").innerHTML = "Welcome" +name;
               //  var el = document.getElementById('lgout');
@@ -291,8 +287,9 @@ function fbLogin()
                 facebookid = response.id;
                 //document.getElementById('userData').innerHTML = facebookid;
                 var xhttp = new XMLHttpRequest();
-                var url = "http://192.168.100.7:8082/login/Login";
+                var url="http://localhost:3010/externalLogin";
                 var myarr = {
+                    provider:"facebook",
                     fbusername: facebookuser,
                     fbmailid: facebookmailid,
                     fbuserid: facebookid};
@@ -304,7 +301,7 @@ function fbLogin()
                 xhttp.onreadystatechange = function () {
                     if ((this.readyState == 4) && (this.status == 200)) {
                         console.log("after getting response" + xhttp.responseText);
-                        var my = JSON.parse(this.responseText);
+                      //  var my = JSON.parse(this.responseText);
                     }
                 };
                 console.log("before sending request");
