@@ -70,26 +70,35 @@ function loginform(){
     console.log("After Generate Captcha");
 }
 function logout(){
-    document.getElementById('userid').value="";
-    document.getElementById("pass").value="";
-    document.getElementById("txtCompare").value="";
-    var ele1 = document.getElementById('frm2');
-    if(ele1.style.display == 'none')
-    {
-        ele1.style.display = 'block';
-    }
-    else
-    {
-        ele1.style.display = 'none';
-    }
-    var ele2 = document.getElementById('btn');
-    if(ele2.style.display == 'none')
-    {
-        ele2.style.display = 'block';
-    }
+   // document.getElementById('userid').value="";
+    //document.getElementById("pass").value="";
+    //document.getElementById("txtCompare").value="";
+    //var ele1 = document.getElementById('frm2');
+    //if(ele1.style.display == 'none')
+    //{
+      //  ele1.style.display = 'block';
+    //}
+    //else
+    //{
+      //  ele1.style.display = 'none';
+    //}
+    //var ele2 = document.getElementById('btn');
+    //if(ele2.style.display == 'none')
+    //{
+      //  ele2.style.display = 'block';
+    //}
+    var xhttp = new XMLHttpRequest();
+    var url="http://localhost:3010/login";
+    xhttp.open("POST", url, true);
+    xhttp.send(params);
+   // var ele2 = document.getElementById('btn');
+    //if (ele2.style.display == 'none')
+    //{
+    //ele2.style.display = 'block';
 }
-function validatelogin() {
 
+function validatelogin()
+{
     var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
     var lreg = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
     femail = document.getElementById("userid").value;
@@ -116,19 +125,17 @@ function validatelogin() {
     else if (str1 != str2)
         document.getElementById("demo").innerHTML = "please enter correct captchcode";
 
-    else
-        {
-            console.log("before request");
-            document.getElementById("btn").style.display='none';
+    else {
+        console.log("before request");
+        document.getElementById("btn").style.display='none';
         document.getElementById("login1").style.display='none';
         console.log("In checkform()");
         var xhttp = new XMLHttpRequest();
-            var url="http://localhost:3010/login";
+        var url="http://localhost:3010/login";
         var myarr = {
             User: document.getElementById("userid").value,
             password: document.getElementById("pass").value
         };
-
         var params = JSON.stringify(myarr);
         console.log(params);
         var params = "inputJsonStr" + "=" + params;
@@ -138,12 +145,19 @@ function validatelogin() {
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
                 var my = JSON.parse(this.responseText);
-                document.getElementById("SignInIcon").innerHTML = "Welcome" +name;
+                var name ='vandana';
+                document.getElementById("SignInIcon").innerHTML = "Welcome" + name;
                var el = document.getElementById('lgout');
                if (el.style.display == 'none')
                {
                   el.style.display = 'block';
+
                }
+               //var ele2 = document.getElementById('btn');
+              //if (ele2.style.display == 'none')
+              //{
+              //ele2.style.display = 'block';
+              //}
                 }
         };
         console.log("before sending request");
@@ -174,21 +188,41 @@ function validatelogin() {
         document.getElementById('login1').style.display = 'none';
         document.getElementById('btn').style.display = 'none';
         //document.getElementById('aClassOfYourOwn').style.display='block';
+        var profile = googleUser.getBasicProfile();
         var data = '';
         data += '<ul>';
-        data += '<li><img src="' + googleUser.getBasicProfile().getImageUrl() + '"/></li>';
-        data += '<li>ID: ' + googleUser.getBasicProfile().getId() + '</li>';
-        data += '<li>Full Name: ' + googleUser.getBasicProfile().getName() + '</li>';
+        //data += '<li><img src="' + profile.getImageUrl() + '"/></li>';
+        data += '<li>ID: ' + profile.getId() + '</li>';
+        data += '<li>Full Name: ' + profile.getName() + '</li>';
         //data += '<li>Given Name: ' + googleUser.getBasicProfile().getName() + '</li>';
         //data += '<li>Family Name: ' + profile.getFamilyName() + '</li>';
         data += '<li>Email: ' + googleUser.getBasicProfile().getEmail() + '</li>';
         data += '</ul>';
         document.getElementsByClassName("aClassOfYourOwn")[0].innerHTML = data;
-        //console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-        //console.log('Logged in as: ' + googleUser.getBasicProfile().getId());
-        // console.log('Logged in as: ' + googleUser.getBasicProfile().getEmail());
-        //console.log('Logged in as: ' + googleUser.getBasicProfile().getImageUrl());
-        //document.getElementById("sgnout").style.display="block";
+        googlemailid = profile.getEmail();
+        googleuser = profile.getName();
+        googleid = profile.getId();
+        //document.getElementById('userData').innerHTML = facebookid;
+        var xhttp = new XMLHttpRequest();
+        var url="http://localhost:3010/externalLogin";
+        var myarr = {
+            provider:"google",
+            gusername: googleuser,
+            gmailid: googlemailid,
+            guserid: googleid };
+        var params = JSON.stringify(myarr);
+        console.log(params);
+        var params = "inputJsonStr" + "=" + params;
+        xhttp.open("POST", url, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.onreadystatechange = function () {
+            if ((this.readyState == 4) && (this.status == 200)) {
+                console.log("after getting response" + xhttp.responseText);
+                //  var my = JSON.parse(this.responseText);
+            }
+        };
+        console.log("before sending request");
+        xhttp.send(params);
     }
 
     function onFailure(error) {
