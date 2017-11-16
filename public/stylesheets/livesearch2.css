@@ -101,6 +101,51 @@
 */
 }
 
+#LogoutOption
+{
+    position:relative;
+    width:200px;
+    height:30px;
+    left:90%;
+    right:50px;
+    top:20px;
+    opacity:1;
+    border: 2px solid red;
+    /*
+    margin-left:0px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    border-width:1px;
+    border-bottom-left-radius:0px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-bottom-left-radius:0px;
+    -ms-border-bottom-left-radius:0px;
+    -o-border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    -moz-border-bottom-right-radius:0px;
+    -ms-border-bottom-right-radius:0px;
+    -o-border-bottom-right-radius:0px;
+    border-top-left-radius:0px;
+    -webkit-border-top-left-radius:0px;
+    -moz-border-top-left-radius:0px;
+    -ms-border-top-left-radius:0px;
+    -o-border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-top-right-radius:0px;
+    -ms-border-top-right-radius:0px;
+    -o-border-top-right-radius:0px;
+    overflow:hidden;
+
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:50% 50%;
+*/
+}
+
+
 #right {
     position: fixed;
     top: 0;

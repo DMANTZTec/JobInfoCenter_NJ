@@ -4,6 +4,14 @@
     <img src="/images/signin1.png" style="width: 20px;height: 20px" >
 </button>
 </div>
+<div id="LogoutOption" style="display: none;">
+
+    <div id="welcomeuser"></div>
+    <div  id="logout"  >
+        <button id="lgout" type="submit"  >logout</button>
+    </div>
+
+</div>
 
 <div  id="login1" style="display: none;">
     <div id="demo"></div>
@@ -23,7 +31,7 @@
         <input type="text" id="txtCaptcha" />
         <input type="button"  id="captcha_image"  onclick="GenerateCaptcha();" />
      <p></p>
-        <button type="submit" id="loginSubmitBtn" onclick="validatelogin()" >submit</button>
+        <button type="submit" id="loginSubmitBtn" onclick="nativelogin()" >submit</button>
     <div id="forgot">
         <a id="f1" href="#">Forgot User Name Or Password</a></div>
     <div id="register"><a id="register1" href="#">Register new User</a></div>
@@ -51,8 +59,5 @@
 </div>
     <div id='frm2'>
     <div id="frm1" > </div>
-    <div  id="logout"  >
-        <button id="lgout" type="submit" style="display: none;" >logout</button>
-    </div>
 </div>
 

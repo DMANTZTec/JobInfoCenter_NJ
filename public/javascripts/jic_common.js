@@ -97,7 +97,7 @@ function logout(){
     //ele2.style.display = 'block';
 }
 
-function validatelogin()
+function nativelogin()
 {
     var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
     var lreg = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
@@ -121,9 +121,12 @@ function validatelogin()
     }
     else if (captch1 == "") {
         document.getElementById('demo').innerHTML = "enter the captcha";
+        return false;
     }
-    else if (str1 != str2)
+    else if (str1 != str2) {
         document.getElementById("demo").innerHTML = "please enter correct captchcode";
+        return false;
+    }
 
     else {
         console.log("before request");
@@ -146,13 +149,14 @@ function validatelogin()
                 console.log("after getting response" + xhttp.responseText);
                 var my = JSON.parse(this.responseText);
                 var name ='vandana';
-                document.getElementById("SignInIcon").innerHTML = "Welcome" + name;
-               var el = document.getElementById('lgout');
-               if (el.style.display == 'none')
-               {
-                  el.style.display = 'block';
+                document.getElementById("welcomeuser").innerHTML = "Welcome" + name +
+                "  ";
+                var el = document.getElementById('LogoutOption');
+                if (el.style.display == 'none')
+                {
+                   el.style.display = 'block';
 
-               }
+                }
                //var ele2 = document.getElementById('btn');
               //if (ele2.style.display == 'none')
               //{

@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var connection = mysql.createConnection({
     host     : '10.0.0.5',
     port     : '3306',
-    user     : 'root',
+    user     : 'shanti',
     password : 'secret',
     database : 'test'
 });
@@ -24,13 +24,17 @@ router.all('/',function (req, res)
     var user=req2.User,pass=req2.password;
     connection.connect(function()
     {
+        console.log("UserId : " + user);
+
         connection.query('SELECT * FROM login WHERE email = ? limit 1',[user], function (error, results, fields)
         {
             if (error)
             {
                 console.log("error ocurred");
+
                 res.send({
                     "code":400,"failed":"error ocurred" });
+
             }
             else
             {
