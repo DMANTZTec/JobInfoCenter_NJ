@@ -137,13 +137,13 @@ function validatelogin() {
         xhttp.onreadystatechange = function () {
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
-                //var my = JSON.parse(this.responseText);
-               // var name='vandana';
-               // document.getElementById("SignInIcon").innerHTML = "Welcome" +name;
-              //  var el = document.getElementById('lgout');
-              //  if (el.style.display == 'none') {
-                //    el.style.display = 'block';
-                //}
+                var my = JSON.parse(this.responseText);
+                document.getElementById("SignInIcon").innerHTML = "Welcome" +name;
+               var el = document.getElementById('lgout');
+               if (el.style.display == 'none')
+               {
+                  el.style.display = 'block';
+               }
                 }
         };
         console.log("before sending request");
