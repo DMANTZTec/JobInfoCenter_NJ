@@ -4,5 +4,12 @@
     {"url" : "http://xxx.xxx.xxx.xxx/solr",
      "port" : "9010"}
 
-  ]
+  ],
+  "db config" : {
+    "host"     : "'10.0.0.5'",
+    "port"     : "3306",
+    "user"     : "shanti",
+    "password" : "secret",
+    "database" : "test"
+  }
 }

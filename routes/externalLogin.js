@@ -9,9 +9,9 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : '10.0.0.5',
     port     : '3306',
-    user     : 'root',
+    user     : 'shanti',
     password : 'secret',
     database : 'test'
 });
@@ -43,11 +43,24 @@ router.all('/',function (req, res)
                         }
                         var time = getDateTime();
                         console.log(time);
-                        connection.connect(function()
+                        connection.connect(function(err)
                         {
-                            connection.query('INSERT INTO externalloginusers(provider,username,mailid,userid) SELECT * FROM (SELECT ?,?,?,?) AS tmp WHERE NOT EXISTS(SELECT mailid FROM externalloginusers WHERE mailid = ?)',[provider,username,mailid,userid,mailid]);
+                            if (err) throw err;
+                            console.log("Before Updating Database");
+                            var insert_stmt='INSERT INTO externalloginusers(provider,username,mailid,userid) ' +
+                                'SELECT * FROM (SELECT ?,?,?,?) AS tmp ' +
+                                'WHERE NOT EXISTS(SELECT mailid FROM externalloginusers WHERE mailid = ?)';
+                            var update_stmt ='update externalloginusers set lastlogintime=? where mailid=?';
+                            connection.query(insert_stmt,[provider,username,mailid,userid,mailid],function (err, result) {
+                                if (err) throw err;
+                                console.log("1 record inserted");
+                            });
                             //connection.query('insert into nativeloginusers(usermailid) values(?) where not exists(select usermailid from nativeloginusers where usermailid=?)', [user,[user]]);
-                            connection.query('update externalloginusers set lastlogintime=? where mailid=?', [time, mailid]);
+                            connection.query(update_stmt, [time, mailid],function (err, result) {
+                                if (err) throw err;
+                                console.log("1 record updated");
+                            });
+                            console.log("Updated Database");
                         });
                      //   req.session.userName = user;
                        // if (req.session.visited)

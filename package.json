@@ -13,6 +13,8 @@
     "express": "^4.16.2",
     "morgan": "^1.9.0",
     "serve-favicon": "^2.4.5",
-    "solr-node": "^1.0.13"
+    "solr-node": "^1.0.13",
+    "express-mysql-session" : "^1.2.2",
+    "mysql" :"^2.15.0"
   }
 }

@@ -9,7 +9,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : '10.0.0.5',
     port     : '3306',
     user     : 'root',
     password : 'secret',
