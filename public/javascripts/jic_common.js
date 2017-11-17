@@ -70,31 +70,10 @@ function loginform(){
     console.log("After Generate Captcha");
 }
 function logout(){
-   // document.getElementById('userid').value="";
-    //document.getElementById("pass").value="";
-    //document.getElementById("txtCompare").value="";
-    //var ele1 = document.getElementById('frm2');
-    //if(ele1.style.display == 'none')
-    //{
-      //  ele1.style.display = 'block';
-    //}
-    //else
-    //{
-      //  ele1.style.display = 'none';
-    //}
-    //var ele2 = document.getElementById('btn');
-    //if(ele2.style.display == 'none')
-    //{
-      //  ele2.style.display = 'block';
-    //}
     var xhttp = new XMLHttpRequest();
-    var url="http://localhost:3010/login";
+    var url="http://localhost:3010/logout";
     xhttp.open("POST", url, true);
-    xhttp.send(params);
-   // var ele2 = document.getElementById('btn');
-    //if (ele2.style.display == 'none')
-    //{
-    //ele2.style.display = 'block';
+    xhttp.send();
 }
 
 function nativelogin()
