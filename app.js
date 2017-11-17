@@ -12,6 +12,7 @@ var login = require('./routes/login');
 var loginSuccess = require('./routes/loginSuccess');
 var search = require('./routes/search');
 var home = require('./routes/home');
+var logout = require('./routes/logout');
 var adbanner = require('./public/javascripts/adbanner');
 var externalLogin = require('./routes/externalLogin');
 
@@ -47,7 +48,7 @@ app.use('/search',search);
 app.use('/home',home);
 app.use('/login', login);
 app.use('/externalLogin', externalLogin);
-
+app.use('/logout', logout);
 app.use('/loginSuccess', loginSuccess);
 //app.use('/adbanner',adbanner);
 //app.use('/users', users);

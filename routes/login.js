@@ -1,10 +1,10 @@
-var express = require('express');
-var url = require("url");
-var qs = require('querystring');
-var path = require('path');
+var express    = require('express');
+var url        = require("url");
+var qs         = require('querystring');
+var path       = require('path');
 var bodyParser = require('body-parser');
 var mysql      = require('mysql');
-var router = express.Router();
+var router     = express.Router();
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
