@@ -14,16 +14,17 @@ var search = require('./routes/search');
 var home = require('./routes/home');
 var logout = require('./routes/logout');
 var adbanner = require('./public/javascripts/adbanner');
-var externalLogin = require('./routes/externalLogin');
-
+var mysql      = require('mysql');
+var myconnection=require('express-myconnection');
 var app = express();
 var options = {
-    host: 'localhost',
+    host: '10.0.0.5',
     port: '3306',
-    user: 'root',
+    user: 'shanti',
     password: 'secret',
     database: 'test'
 };
+app.use(myconnection(mysql,options,'single'));
 var sessionStore = new MySQLStore(options);
 app.use(session({
     secret: '2C44-4D44-W',
@@ -47,7 +48,6 @@ app.use('/', index);
 app.use('/search',search);
 app.use('/home',home);
 app.use('/login', login);
-app.use('/externalLogin', externalLogin);
 app.use('/logout', logout);
 app.use('/loginSuccess', loginSuccess);
 //app.use('/adbanner',adbanner);

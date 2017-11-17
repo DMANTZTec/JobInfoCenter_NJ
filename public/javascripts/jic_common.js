@@ -135,7 +135,7 @@ function nativelogin()
         console.log("In checkform()");
         var xhttp = new XMLHttpRequest();
         var url="http://localhost:3010/login";
-        var myarr = {
+        var myarr = {logintype:"native",
             User: document.getElementById("userid").value,
             password: document.getElementById("pass").value
         };
@@ -148,8 +148,7 @@ function nativelogin()
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
                 var my = JSON.parse(this.responseText);
-                var name ='vandana';
-                document.getElementById("welcomeuser").innerHTML = "Welcome" + name +
+                document.getElementById("welcomeuser").innerHTML = "Welcome" + my[0].usermailid +
                 "  ";
                 var el = document.getElementById('LogoutOption');
                 if (el.style.display == 'none')
@@ -208,9 +207,9 @@ function nativelogin()
         googleid = profile.getId();
         //document.getElementById('userData').innerHTML = facebookid;
         var xhttp = new XMLHttpRequest();
-        var url="http://localhost:3010/externalLogin";
+        var url="http://localhost:3010/login";
         var myarr = {
-            provider:"google",
+            logintype:"google",
             gusername: googleuser,
             gmailid: googlemailid,
             guserid: googleid };
@@ -222,7 +221,15 @@ function nativelogin()
         xhttp.onreadystatechange = function () {
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
-                //  var my = JSON.parse(this.responseText);
+                 var my = JSON.parse(this.responseText);
+                document.getElementById("welcomeuser").innerHTML = "Welcome" + my[0].username +
+                    "  ";
+                var el = document.getElementById('LogoutOption');
+                if (el.style.display == 'none')
+                {
+                    el.style.display = 'block';
+
+                }
             }
         };
         console.log("before sending request");
@@ -326,9 +333,9 @@ function fbLogin()
                 facebookid = response.id;
                 //document.getElementById('userData').innerHTML = facebookid;
                 var xhttp = new XMLHttpRequest();
-                var url="http://localhost:3010/externalLogin";
+                var url="http://localhost:3010/login";
                 var myarr = {
-                    provider:"facebook",
+                    logintype:"facebook",
                     fbusername: facebookuser,
                     fbmailid: facebookmailid,
                     fbuserid: facebookid};
@@ -340,7 +347,15 @@ function fbLogin()
                 xhttp.onreadystatechange = function () {
                     if ((this.readyState == 4) && (this.status == 200)) {
                         console.log("after getting response" + xhttp.responseText);
-                      //  var my = JSON.parse(this.responseText);
+                      var my = JSON.parse(this.responseText);
+                        document.getElementById("welcomeuser").innerHTML = "Welcome" + my[0].username +
+                            "  ";
+                        var el = document.getElementById('LogoutOption');
+                        if (el.style.display == 'none')
+                        {
+                            el.style.display = 'block';
+
+                        }
                     }
                 };
                 console.log("before sending request");

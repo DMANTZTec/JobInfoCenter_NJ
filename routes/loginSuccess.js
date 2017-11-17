@@ -1,7 +1,8 @@
 var express=require('express');
 var router=express.Router();
+var login=require('./login');
 var auth = function(req, res, next) {
-    if (req.session && req.session.userName=="teja@gmail.com")
+    if (req.session && req.session.user_id=="teja@gmail.com")
     {
         //  req.session.lastVisited = Date.now(); //LOOK here
         return next();
