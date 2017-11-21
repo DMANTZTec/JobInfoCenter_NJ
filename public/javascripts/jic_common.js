@@ -1,3 +1,5 @@
+const user = "<%= session.user_id %>";
+
 function fa_search()
 {
     console.log("In fa_search()");
@@ -69,13 +71,22 @@ function loginform(){
     GenerateCaptcha();
     console.log("After Generate Captcha");
 }
-function logout(){
+function logout() {
     var xhttp = new XMLHttpRequest();
-    var url="http://localhost:3010/logout";
+    var url = "http://localhost:3010/logout";
     xhttp.open("POST", url, true);
+    xhttp.onreadystatechange = function ()
+    {
+        if ((this.readyState == 4) && (this.status == 200)) {
+            console.log("after getting response" + xhttp.responseText);
+            var my = JSON.parse(this.responseText);
+            console.log("after parsing response "+ " " + my.status+" "+my.reason);
+
+            // document.getElementById("welcomeuser").innerHTML = "Welcome" + my[0].usermailid ;
+        }
+    };
     xhttp.send();
 }
-
 function nativelogin()
 {
     var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
@@ -126,15 +137,21 @@ function nativelogin()
         xhttp.onreadystatechange = function () {
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
-                var my = JSON.parse(this.responseText);
-                document.getElementById("welcomeuser").innerHTML = "Welcome" + my[0].usermailid +
-                "  ";
+                var response = JSON.parse(this.responseText);
+                var sessionid=response.sessionid;
+                console.log(sessionid);
                 var el = document.getElementById('LogoutOption');
                 if (el.style.display == 'none')
                 {
-                   el.style.display = 'block';
-
+                    el.style.display = 'block';
                 }
+                document.getElementById("welcomeuser").innerHTML = "Welcome" + response.results[0].usermailid + "  ";
+
+                /*else
+                {
+                    var el = document.getElementById('btn');
+                    el.style.display = 'block';
+                }*/
                //var ele2 = document.getElementById('btn');
               //if (ele2.style.display == 'none')
               //{
