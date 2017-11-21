@@ -145,18 +145,7 @@ function nativelogin()
                 {
                     el.style.display = 'block';
                 }
-                document.getElementById("welcomeuser").innerHTML = "Welcome" + response.results[0].usermailid + "  ";
-
-                /*else
-                {
-                    var el = document.getElementById('btn');
-                    el.style.display = 'block';
-                }*/
-               //var ele2 = document.getElementById('btn');
-              //if (ele2.style.display == 'none')
-              //{
-              //ele2.style.display = 'block';
-              //}
+                document.getElementById("welcomeuser").innerHTML = "Welcome" + response.result[0].usermailid + "  ";
                 }
         };
         console.log("before sending request");

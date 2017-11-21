@@ -79,13 +79,9 @@ router.all('/',function (req, res)
                                 if (err) throw err;
                                 console.log("retrieved results");
                                 console.log(result);
-                                var sessid=req.session.user_id;
-                                sessid= usermailid;
-                                var response={results:result,sessionid:sessid};
-                                //res.render('home');
+                                var response={result:result,logintype:provider};
                                 console.log(response);
                                 res.send(response);
-                                //res.redirect('/');
                             });
                             connection.query(update_stmt, [logintime, usermailid], function (err, result, fields) {
                                 if (err) throw err;
@@ -96,10 +92,6 @@ router.all('/',function (req, res)
                             var hour = 30000;
                             req.session.cookie.expires = new Date(Date.now() + hour);
                             res.locals.user_id=req.session.user_id;
-                            //res.redirect('/loginSuccess');
-                            //res.redirect(url.format({
-                            //pathname:"/loginSuccess",
-                            //query:user}));
                         }
                         else {
                             res.send({
@@ -139,7 +131,8 @@ router.all('/',function (req, res)
                 if (err) throw err;
                 console.log("retrieved results");
                 console.log(result);
-               res.send(result);
+                var response={result:result,logintype:provider};
+                res.send(response);
             });
             connection.query(update_stmt, [logintime, usermailid],function (err, result) {
                 if (err) throw err;
@@ -170,7 +163,8 @@ router.all('/',function (req, res)
                 if (err) throw err;
                 console.log("retrieved results");
                 console.log(result);
-                res.send(result);
+                var response={result:result,logintype:provider};
+                res.send(response);
             });
             connection.query(update_stmt, [logintime, usermailid,provider],function (err, result) {
                 if (err) throw err;
