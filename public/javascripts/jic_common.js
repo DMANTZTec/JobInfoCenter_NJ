@@ -92,10 +92,11 @@ xhttp.send();
 }
 
     function logout() {
-        if (currentuser_logintype = "facebook") {
+        var  logintype = document.getElementById('currentuser_logintype').value;
+        if (logintype == "facebook") {
             fbLogout();
         }
-        else if (currentuser_logintype = "google") {
+        else if (logintype == "google") {
             signOut();
         }
             console.log("Enter : logout()");
