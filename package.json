@@ -16,6 +16,7 @@
     "solr-node": "^1.0.13",
     "express-myconnection": "^1.0.4",
     "express-mysql-session" : "^1.2.2",
-    "mysql" :"^2.15.0"
+    "mysql" :"^2.15.0",
+    "jsdom": "^11.4.0"
   }
 }

@@ -1,19 +1,19 @@
 var express = require('express');
 var router = express.Router();
-router.all('/', function (req, res)
+var auth = function(req, res, next)
 {
-    console.log(req.session.user_id);
-    req.session.destroy();
-    //console.log(req.session.user_id);
-    //delete req.session.user_id;
-    if(!req.session)
+    if (req.session && req.session.user_id)
     {
-        var response={status:"success",reason:"session expired"};
-        res.send(response);
+        return next();
     }
     else
-    {   var response={status:"failed",reason:"user is still logged in"};
-        res.send(response);
-    }
+        return res.sendStatus(401);
+};
+router.all('/',auth, function (req, res)
+{
+    console.log(req.session.user_id);
+        req.session.destroy();
+            var response = {status: "success", reason: "session expired"};
+            res.send(response);
 });
 module.exports = router;

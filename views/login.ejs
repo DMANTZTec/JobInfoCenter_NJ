@@ -24,7 +24,6 @@
     <p></p>
     <input type="text" id="userid" placeholder="User Name" />
     <p></p>
-
     <input type="password" id="pass" placeholder="Password"/>
     <p></p>
     <input id="cbox" type="checkbox" checked />
@@ -64,4 +63,20 @@
     <div id='frm2'>
     <div id="frm1" > </div>
 </div>
+<%}%>
+
+<%if(user_id){%>
+<div id="LogoutOption" style="display: block">
+    <div id="welcomeuser"></div>
+    <div  id="logout">
+        <button id="lgout" type="submit" onclick="logout();" >logout</button>
+    </div>
+</div>
+<script>
+    console.log("current user is" +"<%=user_id%>");
+    document.getElementById("welcomeuser").innerHTML = "Welcome"+"<%=user_id%>";
+</script>
+<%}%>
+
+
 
