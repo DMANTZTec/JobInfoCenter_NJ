@@ -1,17 +1,17 @@
 
+<%if(!user_id){%>
+
 <div id="SignInIcon">
 <button id="btn" onclick="loginform();">
     <img src="/images/signin1.png" style="width: 20px;height: 20px" >
 </button>
 </div>
-
-<div id="LogoutOption" style="display: none;">
+<div id="LogoutOption" style="display: none">
     <div id="welcomeuser"></div>
     <div  id="logout">
-        <button id="lgout" type="submit" onclick="logout();" >logout</button>
+        <button id="lgout" type="submit" onclick="logout()">logout</button>
     </div>
 </div>
-
 <div  id="login1" style="display: none;">
     <div id="demo"></div>
     <div id="login" style="text-align:center;">
@@ -58,5 +58,20 @@
     <div id='frm2'>
     <div id="frm1" > </div>
 </div>
+<%}%>
+
+<%if(user_id){%>
+<div id="LogoutOption" style="display: block">
+    <div id="welcomeuser"></div>
+    <div  id="logout">
+        <button id="lgout" type="submit" onclick="logout();" >logout</button>
+    </div>
+</div>
+<script>
+    console.log("current user is" +"<%=user_id%>");
+    document.getElementById("welcomeuser").innerHTML = "Welcome"+"<%=user_id%>";
+</script>
+<%}%>
+
 
 

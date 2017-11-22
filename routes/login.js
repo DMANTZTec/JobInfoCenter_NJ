@@ -79,9 +79,14 @@ router.all('/',function (req, res)
                                 if (err) throw err;
                                 console.log("retrieved results");
                                 console.log(result);
-                                var response={result:result,logintype:provider};
-                                console.log(response);
-                                res.send(response);
+                                if(result) {
+                                    var response = {status: "success", result: result, logintype: provider};
+                                    res.send(response);
+                                }
+                                else{
+                                    var response = {status: "failed"};
+                                    res.send(response);
+                                }
                             });
                             connection.query(update_stmt, [logintime, usermailid], function (err, result, fields) {
                                 if (err) throw err;
@@ -89,21 +94,21 @@ router.all('/',function (req, res)
                             });
                             console.log("Updated Database");
                             req.session.user_id=usermailid;
-                            var hour = 30000;
+                            var hour = 660000;
                             req.session.cookie.expires = new Date(Date.now() + hour);
                             res.locals.user_id=req.session.user_id;
                         }
                         else {
                             res.send({
-                                "code": 204,
-                                "success": "Email and password does not match"
+                                "status": 204,
+                                "reason": "Email and password does not match"
                             });
                         }
                     }
                     else {
                         res.send({
-                            "code": 204,
-                            "success": "Email does not exits"
+                            "status": 204,
+                            "reason": "Email does not exits"
                         });
                     }
                 }
@@ -131,8 +136,15 @@ router.all('/',function (req, res)
                 if (err) throw err;
                 console.log("retrieved results");
                 console.log(result);
-                var response={result:result,logintype:provider};
-                res.send(response);
+                if(result) {
+                    var response = {status: "success", result: result, logintype: provider};
+                    res.send(response);
+                }
+                else
+                {
+                    var response = {status: "failed"};
+                    res.send(response);
+                }
             });
             connection.query(update_stmt, [logintime, usermailid],function (err, result) {
                 if (err) throw err;
@@ -163,9 +175,16 @@ router.all('/',function (req, res)
                 if (err) throw err;
                 console.log("retrieved results");
                 console.log(result);
-                var response={result:result,logintype:provider};
-                res.send(response);
-            });
+                if(result) {
+                    var response = {status: "success", result: result, logintype: provider};
+                    res.send(response);
+                }
+                else
+                {
+                    var response = {status: "failed"};
+                    res.send(response);
+                }
+                });
             connection.query(update_stmt, [logintime, usermailid,provider],function (err, result) {
                 if (err) throw err;
                 console.log("1 record updated");

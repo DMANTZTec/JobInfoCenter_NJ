@@ -16,9 +16,12 @@ var logout = require('./routes/logout');
 var adbanner = require('./public/javascripts/adbanner');
 var mysql      = require('mysql');
 var myconnection=require('express-myconnection');
+var jsdom = require("jsdom");
+var JSDOM = jsdom.JSDOM;
+global.document = new JSDOM('html').window.document;
 var app = express();
 var options = {
-    host    : '192.168.100.10',
+    host    : '10.0.0.3',
     port    : '3306',
     user    : 'shanti',
     password: 'secret',

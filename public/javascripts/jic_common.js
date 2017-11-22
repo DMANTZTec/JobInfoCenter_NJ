@@ -1,4 +1,3 @@
-const user = "<%= session.user_id %>";
 
 function fa_search()
 {
@@ -7,21 +6,17 @@ function fa_search()
     var url="http://localhost:3010/search";
     //var url="http://date.jsontest.com/";
     console.log(document.getElementById("jobsearchform").elements.namedItem("searchinput").value);
-
     var myarr={searchtext:document.getElementById("txt-search").value,operationtype:document.getElementById("hiddensearch").value};
-
     var params=JSON.stringify(myarr);
     //var params = "params" + "=" + document.getElementById("jobsearchform").elements.namedItem("searchinput").value ;
     //var params = "searchText" + "=" + "manager";
     console.log(params);
     var params="inputJsonStr" + "=" + params;
-
     /*var searchText1 = {
                operationType : document.getElementById("searchform").elements.namedItem("operation").value ,
                searchText : document.getElementById("searchform").elements.namedItem("searchtext").value
            };  
     var params = JSON.stringify(searchText1);*/
-
     xhttp.open("POST",url,true);
     xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhttp.onreadystatechange = function()
@@ -49,7 +44,6 @@ function fa_search()
                 document.getElementById('resultbox').innerHTML +='<input type="checkbox" class="checkbox style="float:right;">';
                 document.getElementById('resultbox').innerHTML +=  '</div>';
             }
-
             //document.getElementById('resultbox').innerHTML=xhttp.responseText;
             //console.log(xhttp.responseText);
             //alert(xhttp.responseText);
@@ -138,8 +132,7 @@ function nativelogin()
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
                 var response = JSON.parse(this.responseText);
-                var sessionid=response.sessionid;
-                console.log(sessionid);
+                var logintype=response.logintype;
                 var el = document.getElementById('LogoutOption');
                 if (el.style.display == 'none')
                 {
@@ -207,7 +200,7 @@ function nativelogin()
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
                  var my = JSON.parse(this.responseText);
-                document.getElementById("welcomeuser").innerHTML = "Welcome" + my[0].username +
+                document.getElementById("welcomeuser").innerHTML = "Welcome" + my.result[0].username +
                     "  ";
                 var el = document.getElementById('LogoutOption');
                 if (el.style.display == 'none')
