@@ -94,7 +94,7 @@ router.all('/',function (req, res)
                             });
                             console.log("Updated Database");
                             req.session.user_id=usermailid;
-                            var hour = 660000;
+                            var hour = 60000;
                             req.session.cookie.expires = new Date(Date.now() + hour);
                             res.locals.user_id=req.session.user_id;
                         }
@@ -124,14 +124,14 @@ router.all('/',function (req, res)
             console.log("Before Updating Database");
             var insert_stmt='INSERT INTO externalloginusers(provider,username,mailid,userid) ' +
                 'SELECT * FROM (SELECT ?,?,?,?) AS tmp ' +
-                'WHERE NOT EXISTS(SELECT mailid FROM externalloginusers WHERE mailid = ?)';
-            var update_stmt ='update externalloginusers set lastlogintime=? where mailid=?';
-            var select_stmt='select * from externalloginusers where mailid=?';
-            connection.query(insert_stmt,[provider,username,usermailid,userid,usermailid],function (err, result) {
+                'WHERE NOT EXISTS(SELECT mailid FROM externalloginusers WHERE mailid = ? AND provider=?)';
+            var update_stmt ='update externalloginusers set lastlogintime=? where mailid=? AND provider=?';
+            var select_stmt='select * from externalloginusers where mailid=? and provider=?' ;
+            connection.query(insert_stmt,[provider,username,usermailid,userid,usermailid,provider],function (err, result) {
                 if (err) throw err;
                 console.log("1 record inserted");
             });
-            connection.query(select_stmt,[usermailid],function (err,result,fields)
+            connection.query(select_stmt,[usermailid,provider],function (err,result,fields)
             {
                 if (err) throw err;
                 console.log("retrieved results");
@@ -146,7 +146,7 @@ router.all('/',function (req, res)
                     res.send(response);
                 }
             });
-            connection.query(update_stmt, [logintime, usermailid],function (err, result) {
+            connection.query(update_stmt, [logintime, usermailid,provider],function (err, result) {
                 if (err) throw err;
                 console.log("1 record updated");
             });

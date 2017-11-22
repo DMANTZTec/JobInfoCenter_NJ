@@ -94,20 +94,25 @@ xhttp.send();
     function logout() {
         var  logintype = document.getElementById('currentuser_logintype').value;
         if (logintype == "facebook") {
+            console.log("before calling fbLogout");
             fbLogout();
         }
-        else if (logintype == "google") {
+       else if (logintype == "google") {
+            console.log("before calling fbLogout");
             signOut();
         }
             console.log("Enter : logout()");
             var xhttp = new XMLHttpRequest();
             var url = "http://localhost:3010/logout";
+            /*
             var logoutreq = {
                 logintype: document.getElementById("currentuser_logintype").value,
                 userid: document.getElementById("currentuser_userid").value
             };
             var params = JSON.stringify(logoutreq);
+
             console.log(params);
+            */
             var params = "inputJsonStr" + "=" + params;
             xhttp.open("POST", url, true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -121,8 +126,8 @@ xhttp.send();
                       //  ele.style.display == 'block';
                 }
             };
-            xhttp.send(params);
-
+            //xhttp.send(params);
+            xhttp.send();
     }
     function nativelogin()
     {
@@ -249,6 +254,10 @@ xhttp.send();
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
                  var my = JSON.parse(this.responseText);
+                var logintype = my.logintype;
+                var userid = my.result[0].usermailid;
+                document.getElementById("currentuser_logintype").value = logintype;
+                document.getElementById("currentuser_userid").value = userid;
                 document.getElementById("welcomeuser").innerHTML = "Welcome" + my.result[0].username;
                 var el = document.getElementById('LogoutOption');
                 if (el.style.display == 'none')
@@ -289,6 +298,7 @@ function signOut() {
 
 
     window.fbAsyncInit = function () {
+        console.log("In fbAsyncInit");
         // FB JavaScript SDK configuration and setup
         FB.init({
             appId: '1532496736796288', // FB App ID
@@ -374,6 +384,12 @@ function signOut() {
                     if ((this.readyState == 4) && (this.status == 200)) {
                         console.log("after getting response" + xhttp.responseText);
                       var my = JSON.parse(this.responseText);
+
+                        var logintype = my.logintype;
+                        var userid = my.result[0].mailid;
+                        console.log("TLOG : User Id from Login Response: " + userid);
+                        document.getElementById("currentuser_logintype").value = logintype;
+                        document.getElementById("currentuser_userid").value = userid;
                         document.getElementById("welcomeuser").innerHTML = "Welcome" + my.result[0].username + "  ";
                         var el = document.getElementById('LogoutOption');
                         if (el.style.display == 'none')
