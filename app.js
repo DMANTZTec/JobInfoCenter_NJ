@@ -18,7 +18,7 @@ var mysql      = require('mysql');
 var myconnection=require('express-myconnection');
 var app = express();
 var options = {
-    host    : '192.168.100.10',
+    host    : '10.0.0.3',
     port    : '3306',
     user    : 'shanti',
     password: 'secret',
