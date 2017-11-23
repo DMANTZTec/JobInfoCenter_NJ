@@ -1,12 +1,64 @@
-function registration()
-{
-var xhttp = new XMLHttpRequest();
+//function registration()
+//{
+   /* var emailRegex= /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
+    var fname = document.getElementById("firstname").value;
+    var lname = document.getElementById("lastname").value;
+    var femail = document.getElementById("email").value;
+    var fpassword = document.getElementById("password").value;
+    var rpass=document.getElementById("repassword").value;
+    if( fname == "" )
+    {
+
+        document.getElementById("errorBox").innerHTML = "enter the first name";
+        return false;
+    }
+    if( lname == "" )
+    {
+
+        document.getElementById("errorBox").innerHTML = "enter the last name";
+        return false;
+    }
+
+    if (femail == "" )
+    {
+
+        document.getElementById("errorBox").innerHTML = "enter the email";
+        return false;
+    }
+    else if(!emailRegex.test(femail)){
+
+        document.getElementById("errorBox").innerHTML = "enter the valid email";
+        return false;
+    }
+
+    if(fpassword == "")
+    {
+
+        document.getElementById("errorBox").innerHTML = "enter the password";
+        return false;
+    }
+    if(rpass=="")
+    {
+
+        document.getElementById("errorBox").innerHTML="enter confirm password";
+        return false;
+    }
+    if(rpass !=  fpassword){
+
+        document.getElementById("errorBox").innerHTML = "passwords are not matching, re-enter again";
+        return false;
+    }
+    if(fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != ''){
+        document.getElementById("errorBox").innerHTML = "form submitted successfully";
+    }
+
+/*var xhttp = new XMLHttpRequest();
 var url="http://localhost:3010/registration";
 /*var registerReq = {firstname: document.getElementById("firstname").value,
     lastname: document.getElementById("lastname").value,
     email: document.getElementById("email").value,
     password: document.getElementById("password").value
-};*/
+};
 var registerReq={firstname: "teja",
     lastname: "golusula",
     email: "teja1@gmail.com",
@@ -29,6 +81,7 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.send(params);
 }
+*/
 
     function fa_search()
     {
@@ -138,6 +191,10 @@ xhttp.send(params);
                         el.style.display = 'none';
 
                     }
+                    else
+                    {
+                    document.getElementById("welcomeuser").innerHTML="failed";
+                    }
                 }
             };
             //xhttp.send(params);
@@ -201,11 +258,11 @@ xhttp.send(params);
                 document.getElementById("currentuser_logintype").value = logintype;
                     document.getElementById("currentuser_userid").value = userid;
                 document.getElementById("welcomeuser").innerHTML = "Welcome" + jsonresponse.result[0].usermailid + "  ";
-                var el = document.getElementById('LogoutOption');
-                var ele = document.getElementById('SignInIcon')
-                if (el.style.display == 'none')
+                var element = document.getElementById('LogoutOption');
+
+                if (element.style.display == 'none')
                 {
-                    el.style.display = 'block';
+                    element.style.display = 'block';
                 }
             }
         };
@@ -269,7 +326,7 @@ xhttp.send(params);
                 console.log("after getting response" + xhttp.responseText);
                  var my = JSON.parse(this.responseText);
                 var logintype = my.logintype;
-                var userid = my.result[0].usermailid;
+                var userid = my.result[0].mailid;
                 document.getElementById("currentuser_logintype").value = logintype;
                 document.getElementById("currentuser_userid").value = userid;
                 document.getElementById("welcomeuser").innerHTML = "Welcome" + my.result[0].username;
@@ -278,6 +335,7 @@ xhttp.send(params);
                 {
                     el.style.display = 'block';
                 }
+
             }
         };
         console.log("before sending request");
