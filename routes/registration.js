@@ -11,16 +11,16 @@ router.all('/',function (req, res)
     var jsonRequest=JSON.parse(request);
     console.log(jsonRequest);
     var firstname=jsonRequest.firstname,lastname=jsonRequest.lastname,email=jsonRequest.email,
-        password=jsonRequest.password;
-        //,dateOfBirth=jsonRequest.dateOfbirth,gender=jsonRequest.gender,
-        //phone=jsonRequest.phone,address=jsonRequest.address;
+        password=jsonRequest.password,dateOfBirth=jsonRequest.dateOfbirth,gender=jsonRequest.gender,
+        phone=jsonRequest.phone,address=jsonRequest.address;
     req.getConnection(function (err,connection) {
         if (err) {
             console.error('error connecting: ' + err.stack);
             return;
         }
-        var insert_stmt = 'INSERT INTO registeredusers(firstname,lastname,email,password) values(?,?,?,?)';
-        connection.query(insert_stmt, [firstname, lastname, email, password], function (err, result, fields) {
+        var insert_stmt = 'INSERT INTO registeredusers(firstname,lastname,email,password,DOB,gender,phone,address)' +
+            ' values(?,?,?,?,?,?,?,?)';
+        connection.query(insert_stmt, [firstname, lastname, email, password,dateOfBirth,gender,phone,address], function (err, result, fields) {
             if (err) {
                 throw err;
                 var response = {status: "failed", reason: err};

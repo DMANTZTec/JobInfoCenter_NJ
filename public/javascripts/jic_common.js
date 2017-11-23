@@ -2,10 +2,19 @@ function registration()
 {
 var xhttp = new XMLHttpRequest();
 var url="http://localhost:3010/registration";
-var registerReq = {firstname: document.getElementById("firstname").value,
+/*var registerReq = {firstname: document.getElementById("firstname").value,
     lastname: document.getElementById("lastname").value,
     email: document.getElementById("email").value,
     password: document.getElementById("password").value
+};*/
+var registerReq={firstname: "teja",
+    lastname: "golusula",
+    email: "teja1@gmail.com",
+    password: "Teja@22",
+    dateOfBirth:"22/11/1994",
+    gender:"female",
+    phone:1234567890,
+    address:"hyderabad"
 };
 var params = JSON.stringify(registerReq);
 console.log(params);
@@ -122,10 +131,12 @@ xhttp.send(params);
                     var response = JSON.parse(this.responseText);
                     if(response.status=="success")
                     {
-                        var el = document.getElementById('LogoutOption');
-                        el.style.display == 'none';
+                        console.log(response.status);
                         var ele = document.getElementById('SignInIcon');
-                        ele.style.display == 'block';
+                        if(ele.style.display == 'none')
+                        ele.style.display = 'block';
+                        var el = document.getElementById('LogoutOption');
+                        el.style.display = 'none';
 
                     }
                 }
