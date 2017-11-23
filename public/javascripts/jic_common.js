@@ -94,7 +94,7 @@ xhttp.send(params);
 
     function logout()
     {
-      /*  var  logintype = document.getElementById('currentuser_logintype').value;
+      var  logintype = document.getElementById('currentuser_logintype').value;
         if (logintype == "facebook") {
             console.log("before calling fbLogout");
             fbLogout();
@@ -102,7 +102,7 @@ xhttp.send(params);
        else if (logintype == "google") {
             console.log("before calling fbLogout");
             signOut();
-        }*/
+        }
             console.log("Enter : logout()");
             var xhttp = new XMLHttpRequest();
             var url = "http://localhost:3010/logout";
