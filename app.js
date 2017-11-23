@@ -9,6 +9,7 @@ var session = require('express-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+var registration = require('./routes/registration');
 var loginSuccess = require('./routes/loginSuccess');
 var search = require('./routes/search');
 var home = require('./routes/home');
@@ -16,7 +17,6 @@ var logout = require('./routes/logout');
 var adbanner = require('./public/javascripts/adbanner');
 var mysql      = require('mysql');
 var myconnection=require('express-myconnection');
-
 var app = express();
 var options = {
     host    : '10.0.0.3',
@@ -49,6 +49,7 @@ app.use('/home',home);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/loginSuccess', loginSuccess);
+app.use('/registration',registration);
 //app.use('/adbanner',adbanner);
 //app.use('/users', users);
 // catch 404 and forward to error handler

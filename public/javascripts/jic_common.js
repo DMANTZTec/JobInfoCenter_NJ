@@ -1,12 +1,13 @@
-/*function registration()
+function registration()
 {
 var xhttp = new XMLHttpRequest();
-var url="http://localhost:3010/login";
-var myarr = {logintype:"native",
-    User: document.getElementById("userid").value,
-    password: document.getElementById("pass").value
+var url="http://localhost:3010/registration";
+var registerReq = {firstname: document.getElementById("firstname").value,
+    lastname: document.getElementById("lastname").value,
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value
 };
-var params = JSON.stringify(myarr);
+var params = JSON.stringify(registerReq);
 console.log(params);
 var params = "inputJsonStr" + "=" + params;
 xhttp.open("POST", url, true);
@@ -17,8 +18,8 @@ xhttp.onreadystatechange = function () {
         var jsonresponse = JSON.parse(this.responseText);
     }
 };
-xhttp.send();
-}*/
+xhttp.send(params);
+}
 
     function fa_search()
     {
@@ -91,8 +92,9 @@ xhttp.send();
     console.log("After Generate Captcha");
 }
 
-    function logout() {
-        var  logintype = document.getElementById('currentuser_logintype').value;
+    function logout()
+    {
+      /*  var  logintype = document.getElementById('currentuser_logintype').value;
         if (logintype == "facebook") {
             console.log("before calling fbLogout");
             fbLogout();
@@ -100,7 +102,7 @@ xhttp.send();
        else if (logintype == "google") {
             console.log("before calling fbLogout");
             signOut();
-        }
+        }*/
             console.log("Enter : logout()");
             var xhttp = new XMLHttpRequest();
             var url = "http://localhost:3010/logout";
@@ -110,20 +112,22 @@ xhttp.send();
                 userid: document.getElementById("currentuser_userid").value
             };
             var params = JSON.stringify(logoutreq);
-
             console.log(params);
-            */
-            var params = "inputJsonStr" + "=" + params;
+            var params = "inputJsonStr" + "=" + params; */
             xhttp.open("POST", url, true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.onreadystatechange = function () {
                 if ((this.readyState == 4) && (this.status == 200)) {
                     console.log("after getting response" + xhttp.responseText);
-                    //var my = JSON.parse(this.responseText);
-                    //var el = document.getElementById('LogoutOption')
-                    //var ele = document.getElementById('SignInIcon');
-                    //if (el.style.display == 'none')
-                      //  ele.style.display == 'block';
+                    var response = JSON.parse(this.responseText);
+                    if(response.status=="success")
+                    {
+                        var el = document.getElementById('LogoutOption');
+                        el.style.display == 'none';
+                        var ele = document.getElementById('SignInIcon');
+                        ele.style.display == 'block';
+
+                    }
                 }
             };
             //xhttp.send(params);

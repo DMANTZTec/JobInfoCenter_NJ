@@ -67,7 +67,8 @@ router.all('/',function (req, res)
                         {
                             var logintime = getDateTime();
                             console.log(logintime);
-                            var insert_stmt = 'INSERT INTO nativeloginusers(usermailid) SELECT * FROM (SELECT ?) AS tmp WHERE NOT EXISTS(SELECT usermailid FROM nativeloginusers WHERE usermailid = ?)';
+                            var insert_stmt = 'INSERT INTO nativeloginusers(usermailid) SELECT * FROM (SELECT ?) ' +
+                                'AS tmp WHERE NOT EXISTS(SELECT usermailid FROM nativeloginusers WHERE usermailid = ?)';
                             var update_stmt = 'update nativeloginusers set lastlogintime=? where usermailid=?';
                             var select_stmt='select * from nativeloginusers where usermailid=?';
                             connection.query(insert_stmt, [usermailid, usermailid], function (err, result, fields) {
@@ -94,8 +95,9 @@ router.all('/',function (req, res)
                             });
                             console.log("Updated Database");
                             req.session.user_id=usermailid;
-                            var hour = 60000;
-                            req.session.cookie.expires = new Date(Date.now() + hour);
+                            var sesstimeout = 60000;
+                            req.session.logintype=provider;
+                            req.session.cookie.expires = new Date(Date.now() + sesstimeout);
                             res.locals.user_id=req.session.user_id;
                         }
                         else {
@@ -153,6 +155,9 @@ router.all('/',function (req, res)
             console.log("Updated Database");
         });
         req.session.user_id=usermailid;
+        req.session.logintype=provider;
+        var sesstimeout = 60000;
+        req.session.cookie.expires = new Date(Date.now() + sesstimeout);
     }
     else if(provider=="google")
     {
@@ -192,6 +197,9 @@ router.all('/',function (req, res)
             console.log("Updated Database");
         });
         req.session.user_id=usermailid;
+        req.session.logintype=provider;
+        var sesstimeout = 60000;
+        req.session.cookie.expires = new Date(Date.now() + sesstimeout);
     }
 });
 

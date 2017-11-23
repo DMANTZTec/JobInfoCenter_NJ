@@ -12,7 +12,8 @@ var auth = function(req, res, next)
 router.all('/',auth, function (req, res)
 {
     console.log(req.session.user_id);
-        req.session.destroy();
+    console.log(req.session.logintype);
+    req.session.destroy();
             var response = {status: "success", reason: "session expired"};
             res.send(response);
 });
