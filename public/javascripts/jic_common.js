@@ -133,7 +133,6 @@ xhttp.send(params);
                     {
                         console.log(response.status);
                         var ele = document.getElementById('SignInIcon');
-                        if(ele.style.display == 'none')
                         ele.style.display = 'block';
                         var el = document.getElementById('LogoutOption');
                         el.style.display = 'none';
