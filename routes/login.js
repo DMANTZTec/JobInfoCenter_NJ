@@ -16,11 +16,11 @@ router.all('/',function (req, res)
     if(jsonRequest.logintype=="facebook")
     {
         var username = jsonRequest.fbusername, usermailid = jsonRequest.fbmailid,
-            userid = jsonRequest.fbuserid, provider = "facebook";
+            userid = jsonRequest.fbuserid, provider = jsonRequest.logintype;
     }
     else if(jsonRequest.logintype=="google") {
         var username = jsonRequest.gusername, usermailid = jsonRequest.gmailid,
-            userid = jsonRequest.guserid, provider = "google";
+            userid = jsonRequest.guserid, provider = jsonRequest.logintype;
     }
     else
     var usermailid=jsonRequest.User,userpassword=jsonRequest.password,provider="native";
@@ -67,7 +67,8 @@ router.all('/',function (req, res)
                         {
                             var logintime = getDateTime();
                             console.log(logintime);
-                            var insert_stmt = 'INSERT INTO nativeloginusers(usermailid) SELECT * FROM (SELECT ?) AS tmp WHERE NOT EXISTS(SELECT usermailid FROM nativeloginusers WHERE usermailid = ?)';
+                            var insert_stmt = 'INSERT INTO nativeloginusers(usermailid) SELECT * FROM (SELECT ?) ' +
+                                'AS tmp WHERE NOT EXISTS(SELECT usermailid FROM nativeloginusers WHERE usermailid = ?)';
                             var update_stmt = 'update nativeloginusers set lastlogintime=? where usermailid=?';
                             var select_stmt='select * from nativeloginusers where usermailid=?';
                             connection.query(insert_stmt, [usermailid, usermailid], function (err, result, fields) {
@@ -79,32 +80,37 @@ router.all('/',function (req, res)
                                 if (err) throw err;
                                 console.log("retrieved results");
                                 console.log(result);
-                                res.send(result);
+                                if(result) {
+                                    var response = {status: "success", result: result, logintype: provider};
+                                    res.send(response);
+                                }
+                                else{
+                                    var response = {status: "failed"};
+                                    res.send(response);
+                                }
                             });
                             connection.query(update_stmt, [logintime, usermailid], function (err, result, fields) {
                                 if (err) throw err;
                                 console.log("1 record updated");
                             });
                             console.log("Updated Database");
-                            req.session.user_id = usermailid;
-                            var hour = 30000;
-                            req.session.cookie.expires = new Date(Date.now() + hour);
-                            //res.redirect('/loginSuccess');
-                            //res.redirect(url.format({
-                            //pathname:"/loginSuccess",
-                            //query:user}));
+                            req.session.user_id=usermailid;
+                            var sesstimeout = 60000;
+                            req.session.logintype=provider;
+                            req.session.cookie.expires = new Date(Date.now() + sesstimeout);
+                            res.locals.user_id=req.session.user_id;
                         }
                         else {
                             res.send({
-                                "code": 204,
-                                "success": "Email and password does not match"
+                                "status": 204,
+                                "reason": "Email and password does not match"
                             });
                         }
                     }
                     else {
                         res.send({
-                            "code": 204,
-                            "success": "Email does not exits"
+                            "status": 204,
+                            "reason": "Email does not exits"
                         });
                     }
                 }
@@ -120,29 +126,40 @@ router.all('/',function (req, res)
             console.log("Before Updating Database");
             var insert_stmt='INSERT INTO externalloginusers(provider,username,mailid,userid) ' +
                 'SELECT * FROM (SELECT ?,?,?,?) AS tmp ' +
-                'WHERE NOT EXISTS(SELECT mailid FROM externalloginusers WHERE mailid = ?)';
-            var update_stmt ='update externalloginusers set lastlogintime=? where mailid=?';
-            var select_stmt='select * from externalloginusers where mailid=?';
-            connection.query(insert_stmt,[provider,username,usermailid,userid,usermailid],function (err, result) {
+                'WHERE NOT EXISTS(SELECT mailid FROM externalloginusers WHERE mailid = ? AND provider=?)';
+            var update_stmt ='update externalloginusers set lastlogintime=? where mailid=? AND provider=?';
+            var select_stmt='select * from externalloginusers where mailid=? and provider=?' ;
+            connection.query(insert_stmt,[provider,username,usermailid,userid,usermailid,provider],function (err, result) {
                 if (err) throw err;
                 console.log("1 record inserted");
             });
-            connection.query(select_stmt,[usermailid],function (err,result,fields)
+            connection.query(select_stmt,[usermailid,provider],function (err,result,fields)
             {
                 if (err) throw err;
                 console.log("retrieved results");
                 console.log(result);
-               res.send(result);
+                if(result) {
+                    var response = {status: "success", result: result, logintype: provider};
+                    res.send(response);
+                }
+                else
+                {
+                    var response = {status: "failed"};
+                    res.send(response);
+                }
             });
-            connection.query(update_stmt, [logintime, usermailid],function (err, result) {
+            connection.query(update_stmt, [logintime, usermailid,provider],function (err, result) {
                 if (err) throw err;
                 console.log("1 record updated");
             });
             console.log("Updated Database");
         });
         req.session.user_id=usermailid;
+        req.session.logintype=provider;
+        var sesstimeout = 60000;
+        req.session.cookie.expires = new Date(Date.now() + sesstimeout);
     }
-     if(provider=="google")
+    else if(provider=="google")
     {
         var logintime=getDateTime();
         req.getConnection(function(err,connection)
@@ -151,27 +168,38 @@ router.all('/',function (req, res)
             console.log("Before Updating Database");
             var insert_stmt='INSERT INTO externalloginusers(provider,username,mailid,userid) ' +
                 'SELECT * FROM (SELECT ?,?,?,?) AS tmp ' +
-                'WHERE NOT EXISTS(SELECT mailid FROM externalloginusers WHERE mailid = ?)';
-            var update_stmt ='update externalloginusers set lastlogintime=? where mailid=?';
-            var select_stmt='select * from externalloginusers where mailid=?';
-            connection.query(insert_stmt,[provider,username,usermailid,userid,usermailid],function (err, result) {
+                'WHERE NOT EXISTS(SELECT mailid FROM externalloginusers WHERE mailid = ? and provider=?)';
+            var update_stmt ='update externalloginusers set lastlogintime=? where mailid=? and provider=?';
+            var select_stmt='select * from externalloginusers where mailid=? and provider=?';
+            connection.query(insert_stmt,[provider,username,usermailid,userid,usermailid,provider],function (err, result) {
                 if (err) throw err;
                 console.log("1 record inserted");
             });
-            connection.query(select_stmt,[usermailid],function (err,result,fields)
+            connection.query(select_stmt,[usermailid,provider],function (err,result,fields)
             {
                 if (err) throw err;
                 console.log("retrieved results");
                 console.log(result);
-                res.send(result);
-            });
-            connection.query(update_stmt, [logintime, usermailid],function (err, result) {
+                if(result) {
+                    var response = {status: "success", result: result, logintype: provider};
+                    res.send(response);
+                }
+                else
+                {
+                    var response = {status: "failed"};
+                    res.send(response);
+                }
+                });
+            connection.query(update_stmt, [logintime, usermailid,provider],function (err, result) {
                 if (err) throw err;
                 console.log("1 record updated");
             });
             console.log("Updated Database");
         });
         req.session.user_id=usermailid;
+        req.session.logintype=provider;
+        var sesstimeout = 60000;
+        req.session.cookie.expires = new Date(Date.now() + sesstimeout);
     }
 });
 

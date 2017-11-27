@@ -1,18 +1,18 @@
 var express=require('express');
 var router=express.Router();
-var login=require('./login');
-var auth = function(req, res, next) {
-    if (req.session && req.session.user_id=="teja@gmail.com")
+var auth = function(req, res, next)
+{
+    if (req.session && req.session.user_id)
     {
-        //  req.session.lastVisited = Date.now(); //LOOK here
         return next();
     }
     else
         return res.sendStatus(401);
 };
-router.all('/', auth, function (req, res) {
+router.all('/', auth, function (req, res)
+{
+    console.log(req.session.user_id);
     res.send("You can only see this after you've logged in.");
     //res.send(req.session);
-
 });
 module.exports = router;

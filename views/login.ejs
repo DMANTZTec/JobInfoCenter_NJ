@@ -1,16 +1,18 @@
 
-<div id="SignInIcon">
-<button id="btn" onclick="loginform();">
-    <img src="/images/signin1.png" style="width: 20px;height: 20px" >
-</button>
+<div id="SignInIcon" style="display: <%if(user_id){%>none <%}else {%> block <%}%>" >
+    <button id="btn" onclick="loginform();">
+        <img src="/images/signin1.png" style="width: 20px;height: 20px" >
+    </button>
 </div>
-<div id="LogoutOption" style="display: none;">
-
+<div id="LogoutOption" style="display: <%if(user_id){%>block <%}else {%> none <%}%>">
+    <form id="logoutform" method="post">
+        <input type="hidden" id="currentuser_userid" value="">
+        <input type="hidden" id="currentuser_logintype" value="">
+    </form>
     <div id="welcomeuser"></div>
-    <div  id="logout"  >
-        <button id="lgout" type="submit"  >logout</button>
+    <div  id="logout">
+        <button id="lgout" type="submit" onclick="logout();" >logout</button>
     </div>
-
 </div>
 
 <div  id="login1" style="display: none;">
@@ -21,7 +23,6 @@
     <p></p>
     <input type="text" id="userid" placeholder="User Name" />
     <p></p>
-
     <input type="password" id="pass" placeholder="Password"/>
     <p></p>
     <input id="cbox" type="checkbox" checked />
@@ -40,24 +41,32 @@
     <div id="googlelogin"> <script>renderGoogleLoginOption()</script>
     </div>
     <P></P>
-
     <div id="fblogin">
     <a href="#" onclick="fbLogin()"  id="fbLink">
         <img class="fbloginLink" src="/images/LoginWithFacebook.png"/>
     </a>
     </div>
-
-
 </div>
+
+<%if(user_id){%>
+<script>
+    console.log("current user is" +"<%=user_id%>");
+    document.getElementById("welcomeuser").innerHTML = "Welcome"+"<%=user_id%>";
+    document.getElementById("currentuser_userid").value = "<%=user_id%>";
+    document.getElementById("currentuser_logintype").value = "<%=logintype%>";
+</script>
+<%}%>
 
 <div class="aClassOfYourOwn"></div>
 <a href="#" id="sgnout"  onclick="signOut()">Sign out </a>
-<div id="details">
 <a href="#" id="fbLink1"></a>
+<div id="details">
 <div id="status" ></div>
 <div id="userData"></div>
 </div>
     <div id='frm2'>
     <div id="frm1" > </div>
 </div>
+
+
 
