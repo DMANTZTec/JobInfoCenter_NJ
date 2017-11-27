@@ -1,72 +1,74 @@
-//function registration()
-//{
-   /* var emailRegex= /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
-    var fname = document.getElementById("firstname").value;
-    var lname = document.getElementById("lastname").value;
-    var femail = document.getElementById("email").value;
-    var fpassword = document.getElementById("password").value;
-    var rpass=document.getElementById("repassword").value;
-    if( fname == "" )
-    {
+function RegistrationForm() {
+    var element = document.getElementById("registrtion");
+    element.style.display = "block";
+    var element1 = document.getElementById("login1");
+    element1.style.display = "none";
+    GenerateCaptcha();
+    console.log("After Generating captcha");
+}
+  function validateRegistration() {
+      var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
+      var fname = document.getElementById("Fname_box").value;
+      var lname = document.getElementById("Lname_box").value;
+      var femail = document.getElementById("Email_box").value;
+      var fpassword = document.getElementById("Password_box").value;
+      var rpass = document.getElementById("Confirm_pwd_box").value;
+      if (fname == "") {
+          document.getElementById("errorBox").innerHTML = "enter the first name";
+          return false;
+      }
+      else if (lname == "") {
+          document.getElementById("errorBox").innerHTML = "enter the last name";
+          return false;
+      }
+      else if (femail == "") {
+          document.getElementById("errorBox").innerHTML = "enter the email";
+          return false;
+      }
+      else if (!emailRegex.test(femail)) {
+          document.getElementById("errorBox").innerHTML = "enter the valid email";
+          return false;
+      }
+      else if (fpassword == "") {
+          document.getElementById("errorBox").innerHTML = "enter the password";
+          return false;
+      }
+      else if (rpass == "") {
+          document.getElementById("errorBox").innerHTML = "enter confirm password";
+          return false;
+      }
+      else if (rpass != fpassword) {
+          document.getElementById("errorBox").innerHTML = "passwords are not matching, re-enter again";
+          return false;
+      }
+      else if (captch1 == "") {
+          document.getElementById('errorBox').innerHTML = "enter the captcha";
+          return false;
+      }
+      else if (str1 != str2) {
+          document.getElementById("errorBox").innerHTML = "please enter correct captchcode";
+          return false;
+      }
+      else if (fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != '' && captcha1 != '') ;
+      {
+          document.getElementById("errorBox").innerHTML = "form submitted successfully";
+      }
+  }
 
-        document.getElementById("errorBox").innerHTML = "enter the first name";
-        return false;
-    }
-    if( lname == "" )
-    {
-
-        document.getElementById("errorBox").innerHTML = "enter the last name";
-        return false;
-    }
-
-    if (femail == "" )
-    {
-
-        document.getElementById("errorBox").innerHTML = "enter the email";
-        return false;
-    }
-    else if(!emailRegex.test(femail)){
-
-        document.getElementById("errorBox").innerHTML = "enter the valid email";
-        return false;
-    }
-
-    if(fpassword == "")
-    {
-
-        document.getElementById("errorBox").innerHTML = "enter the password";
-        return false;
-    }
-    if(rpass=="")
-    {
-
-        document.getElementById("errorBox").innerHTML="enter confirm password";
-        return false;
-    }
-    if(rpass !=  fpassword){
-
-        document.getElementById("errorBox").innerHTML = "passwords are not matching, re-enter again";
-        return false;
-    }
-    if(fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != ''){
-        document.getElementById("errorBox").innerHTML = "form submitted successfully";
-    }
-
-/*var xhttp = new XMLHttpRequest();
+  /*else
+       {
+var xhttp = new XMLHttpRequest();
 var url="http://localhost:3010/registration";
-/*var registerReq = {firstname: document.getElementById("firstname").value,
-    lastname: document.getElementById("lastname").value,
-    email: document.getElementById("email").value,
-    password: document.getElementById("password").value
-};
-var registerReq={firstname: "teja",
+var registerReq = {firstname: document.getElementById("Fname_box").value,
+    lastname: document.getElementById("Lname_box").value,
+    email: document.getElementById("Email_box").value,
+    password: document.getElementById("Password_box").value};
+
+/*var registerReq={firstname: "teja",
     lastname: "golusula",
     email: "teja1@gmail.com",
     password: "Teja@22",
-    dateOfBirth:"22/11/1994",
-    gender:"female",
-    phone:1234567890,
-    address:"hyderabad"
+
 };
 var params = JSON.stringify(registerReq);
 console.log(params);
@@ -75,14 +77,16 @@ xhttp.open("POST", url, true);
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhttp.onreadystatechange = function () {
     if ((this.readyState == 4) && (this.status == 200)) {
-        console.log("after getting response" + xhttp.responseText);
+       // console.log("after getting response" + xhttp.responseText);
         var jsonresponse = JSON.parse(this.responseText);
     }
 };
 xhttp.send(params);
 }
 */
-
+function resetform() {
+    document.getElementById("R_form").reset();
+}
     function fa_search()
     {
     console.log("In fa_search()");
@@ -185,8 +189,11 @@ xhttp.send(params);
                     if(response.status=="success")
                     {
                         console.log(response.status);
-                        var ele = document.getElementById('SignInIcon');
+                        var ele = document.getElementById('btn');
                         ele.style.display = 'block';
+                        document.getElementById('userid').value="";
+                        document.getElementById("pass").value="";
+                        document.getElementById("txtCompare").value="";
                         var el = document.getElementById('LogoutOption');
                         el.style.display = 'none';
 
@@ -259,7 +266,6 @@ xhttp.send(params);
                     document.getElementById("currentuser_userid").value = userid;
                 document.getElementById("welcomeuser").innerHTML = "Welcome" + jsonresponse.result[0].usermailid + "  ";
                 var element = document.getElementById('LogoutOption');
-
                 if (element.style.display == 'none')
                 {
                     element.style.display = 'block';
@@ -425,8 +431,8 @@ function signOut() {
                 document.getElementById('btn').style.display = "none";
                 document.getElementById('login1').style.display = "none";
                 // document.getElementById('SignInIcon').style.display = "none";
-                document.getElementById('fbLink1').setAttribute("onclick", "fbLogout()");
-                document.getElementById('fbLink1').innerHTML = 'Logout from Facebook';
+                //document.getElementById('fbLink1').setAttribute("onclick", "fbLogout()");
+               // document.getElementById('fbLink1').innerHTML = 'Logout from Facebook';
                 //document.getElementById('userData').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
                // document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '
                  //   + response.id + '</p><p><b>Name:</b> ' + response.first_name + ' '

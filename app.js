@@ -9,7 +9,7 @@ var session = require('express-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
-var registration = require('./routes/registration');
+var Registration_form = require('./routes/registration');
 var loginSuccess = require('./routes/loginSuccess');
 var search = require('./routes/search');
 var home = require('./routes/home');
@@ -19,7 +19,7 @@ var mysql      = require('mysql');
 var myconnection=require('express-myconnection');
 var app = express();
 var options = {
-    host    : '10.0.0.3',
+    host    : '10.0.0.4',
     port    : '3306',
     user    : 'shanti',
     password: 'secret',
@@ -28,7 +28,7 @@ var options = {
 app.use(myconnection(mysql,options,'single'));
 var sessionStore = new MySQLStore(options);
 app.use(session({
-    secret: '2C44-4D44-W',
+   secret: '2C44-4D44-W',
     store: sessionStore,
     resave: false,
     saveUninitialized: false
@@ -49,7 +49,7 @@ app.use('/home',home);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/loginSuccess', loginSuccess);
-app.use('/registration',registration);
+app.use('/Registration_form', Registration_form);
 //app.use('/adbanner',adbanner);
 //app.use('/users', users);
 // catch 404 and forward to error handler
