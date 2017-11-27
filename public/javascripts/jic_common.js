@@ -1,5 +1,5 @@
 function RegistrationForm() {
-    var element = document.getElementById("registrtion");
+    var element = document.getElementById("Registration_form");
     element.style.display = "block";
     var element1 = document.getElementById("login1");
     element1.style.display = "none";
@@ -499,5 +499,30 @@ function fbLogout() {
     });
 }
     // Logout from facebook
+
+//Global script
+
+window.onclick = function(event)
+{
+
+    console.log("window clicked");
+    console.log(document.getElementById('Registration_form').style.display);
+
+   // if (document.getElementById('Registration_form').style.display == "block"){
+     //   console.log("Registration Form is Active")
+
+     if (!event.target == document.getElementById('Registration_form'))
+    {
+        console.log('clicked on registration form');
+       // document.getElementById('Registration_form').style.display = "block";
+
+    }
+    else {
+        console.log('clicked outside of registration form');
+         //document.getElementById('Registration_form').style.display = "none";
+        // document.getElementById('login1').style.display = "block";
+    }
+   // }
+    }
 
 
