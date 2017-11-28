@@ -9,6 +9,7 @@ function RegistrationForm() {
   function validateRegistration() {
       //GenerateCaptcha();
       var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
+      var lreg = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
       var fname = document.getElementById("Fname_box").value;
       var lname = document.getElementById("Lname_box").value;
       var femail = document.getElementById("Email_box").value;
@@ -37,7 +38,7 @@ function RegistrationForm() {
           document.getElementById("errorBox").innerHTML = "enter the password";
           return false;
       }
-      else if (!emailRegex.test(fpassword)) {
+      else if (!lreg.test(fpassword)) {
           document.getElementById('demo').innerHTML = "enter the valid password";
           return false;
       }
