@@ -3,16 +3,20 @@ function RegistrationForm() {
     element.style.display = "block";
     var element1 = document.getElementById("login1");
     element1.style.display = "none";
-    GenerateCaptcha();
+   GenerateCaptcha1();
     console.log("After Generating captcha");
 }
   function validateRegistration() {
+      //GenerateCaptcha();
       var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
       var fname = document.getElementById("Fname_box").value;
       var lname = document.getElementById("Lname_box").value;
       var femail = document.getElementById("Email_box").value;
       var fpassword = document.getElementById("Password_box").value;
       var rpass = document.getElementById("Confirm_pwd_box").value;
+      captch1 = document.getElementById("Enter_Captcha_box").value;
+      var str1 = removeSpaces(document.getElementById('Captcha').value);
+      var str2 = removeSpaces(document.getElementById('Enter_Captcha_box').value);
       if (fname == "") {
           document.getElementById("errorBox").innerHTML = "enter the first name";
           return false;
@@ -49,44 +53,62 @@ function RegistrationForm() {
           document.getElementById("errorBox").innerHTML = "please enter correct captchcode";
           return false;
       }
-      else if (fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != '' && captcha1 != '') ;
+//     else if (fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != '' && captcha1 != '') ;
+  //    {
+    //      document.getElementById("errorBox").innerHTML = "form submitted successfully";
+      //}
+      else
       {
-          document.getElementById("errorBox").innerHTML = "form submitted successfully";
+          var xhttp = new XMLHttpRequest();
+          var url = "http://localhost:3010/registration";
+          var registerReq = {
+              firstname: document.getElementById("FirstNameText").value,
+              lastname: document.getElementById("Lname_box").value,
+              email: document.getElementById("Email_box").value,
+              password: document.getElementById("Password_box").value
+          };
+
+          /*var registerReq={firstname: "teja",
+              lastname: "golusula",
+              email: "teja1@gmail.com",
+              password: "Teja@22",
+
+          };*/
+          var params = JSON.stringify(registerReq);
+          console.log(params);
+          var params = "inputJsonStr" + "=" + params;
+          xhttp.open("POST", url, true);
+          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xhttp.onreadystatechange = function () {
+              if ((this.readyState == 4) && (this.status == 200)) {
+                  // console.log("after getting response" + xhttp.responseText);
+                  var jsonresponse = JSON.parse(this.responseText);
+              }
+          };
+          xhttp.send(params);
       }
   }
-
-  /*else
-       {
-var xhttp = new XMLHttpRequest();
-var url="http://localhost:3010/registration";
-var registerReq = {firstname: document.getElementById("Fname_box").value,
-    lastname: document.getElementById("Lname_box").value,
-    email: document.getElementById("Email_box").value,
-    password: document.getElementById("Password_box").value};
-
-/*var registerReq={firstname: "teja",
-    lastname: "golusula",
-    email: "teja1@gmail.com",
-    password: "Teja@22",
-
-};
-var params = JSON.stringify(registerReq);
-console.log(params);
-var params = "inputJsonStr" + "=" + params;
-xhttp.open("POST", url, true);
-xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xhttp.onreadystatechange = function () {
-    if ((this.readyState == 4) && (this.status == 200)) {
-       // console.log("after getting response" + xhttp.responseText);
-        var jsonresponse = JSON.parse(this.responseText);
-    }
-};
-xhttp.send(params);
+function GenerateCaptcha1() {
+    var chr1 = Math.ceil(Math.random() * 10) + '';
+    var chr2 = Math.ceil(Math.random() * 10) + '';
+    var chr3 = Math.ceil(Math.random() * 10) + '';
+    var str = new Array(4).join().replace(/(.|$)/g, function () {
+        return ((Math.random() * 36) | 0).toString(36)[Math.random() < .5 ? "toString" : "toUpperCase"]();
+    });
+    var captchaCode = str + chr1 + ' ' + chr2 + ' ' + chr3;
+    document.getElementById("Captcha").value = captchaCode;
 }
-*/
+
+/* Validating Captcha Function */
+
+/* Remove spaces from Captcha Code */
+function removeSpaces(string) {
+    return string.split(' ').join('');
+}
 function resetform() {
-    document.getElementById("R_form").reset();
+    document.getElementById("Registration").reset();
 }
+
     function fa_search()
     {
     console.log("In fa_search()");
