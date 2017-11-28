@@ -49,7 +49,7 @@ router.all('/',function (req, res)
                 return;
             }
             console.log("UserId : " + usermailid);
-            var select='SELECT * FROM login WHERE email = ? limit 1';
+            var select='SELECT * FROM registeredusers WHERE email = ? limit 1';
             connection.query(select, [usermailid], function (error, results, fields) {
                 if (error) {
                     console.log("error ocurred");
