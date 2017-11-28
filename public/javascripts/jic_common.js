@@ -10,7 +10,7 @@ function RegistrationForm() {
       //GenerateCaptcha();
       var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
       var lreg = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
-      var fname = document.getElementById("Fname_box").value;
+      var fname = document.getElementById("FirstNameText").value;
       var lname = document.getElementById("Lname_box").value;
       var femail = document.getElementById("Email_box").value;
       var fpassword = document.getElementById("Password_box").value;
@@ -39,7 +39,7 @@ function RegistrationForm() {
           return false;
       }
       else if (!lreg.test(fpassword)) {
-          document.getElementById('demo').innerHTML = "enter the valid password";
+          document.getElementById('errorBox').innerHTML = "enter the valid password";
           return false;
       }
       else if (rpass == "") {
@@ -58,10 +58,10 @@ function RegistrationForm() {
           document.getElementById("errorBox").innerHTML = "please enter correct captchcode";
           return false;
       }
-//     else if (fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != '' && captcha1 != '') ;
+  //   else if (fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != '' && captcha1 != '') ;
   //    {
-    //      document.getElementById("errorBox").innerHTML = "form submitted successfully";
-      //}
+  //       document.getElementById("errorBox").innerHTML = "form submitted successfully";
+  //    }
       else
       {
           var xhttp = new XMLHttpRequest();
