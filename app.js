@@ -1,4 +1,6 @@
 var express = require('express');
+var fs=require('fs');
+//const log = require('simple-node-logger').createSimpleLogger();
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -17,9 +19,17 @@ var logout = require('./routes/logout');
 var adbanner = require('./public/javascripts/adbanner');
 var mysql      = require('mysql');
 var myconnection=require('express-myconnection');
+var rfs = require('rotating-file-stream');
+var logDirectory = path.join(__dirname, 'log');
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+//var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
+var accessLogStream = rfs('access.log', {
+    interval: '1d', // rotate daily
+    path: logDirectory
+});
 var app = express();
 var options = {
-    host    : '10.0.0.6',
+    host    : '10.0.0.7',
     port    : '3306',
     user    : 'shanti',
     password: 'secret',
@@ -38,7 +48,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger('tiny', {stream: accessLogStream}));
+app.use(logger('dev',{
+    skip: function (req, res) { return res.statusCode < 400 }
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -49,8 +62,7 @@ app.use('/home',home);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/loginSuccess', loginSuccess);
-app.use('/Registration_form', Registration_form);
-
+app.use('/Registration_form',Registration_form);
 //app.use('/adbanner',adbanner);
 //app.use('/users', users);
 // catch 404 and forward to error handler

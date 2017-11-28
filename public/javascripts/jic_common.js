@@ -1,4 +1,5 @@
-function RegistrationForm() {
+function RegistrationForm()
+{
     var element = document.getElementById("Registration_form");
     element.style.display = "block";
     var element1 = document.getElementById("login1");
@@ -39,7 +40,7 @@ function RegistrationForm() {
           return false;
       }
       else if (!lreg.test(fpassword)) {
-          document.getElementById('demo').innerHTML = "enter the valid password";
+          document.getElementById('errorBox').innerHTML = "enter the valid password";
           return false;
       }
       else if (rpass == "") {
@@ -59,11 +60,10 @@ function RegistrationForm() {
           return false;
       }
 //     else if (fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != '' && captcha1 != '') ;
-  //    {
-    //      document.getElementById("errorBox").innerHTML = "form submitted successfully";
+      //    {
+      //      document.getElementById("errorBox").innerHTML = "form submitted successfully";
       //}
-      else
-      {
+      else {
           var xhttp = new XMLHttpRequest();
           var url = "http://localhost:3010/Registration_form";
           var registerReq = {
@@ -72,20 +72,14 @@ function RegistrationForm() {
               email: document.getElementById("Email_box").value,
               password: document.getElementById("Password_box").value
           };
-
-          /*var registerReq={firstname: "teja",
-              lastname: "golusula",
-              email: "teja1@gmail.com",
-              password: "Teja@22",
-
-          };*/
           var params = JSON.stringify(registerReq);
           console.log(params);
           var params = "inputJsonStr" + "=" + params;
           xhttp.open("POST", url, true);
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
           xhttp.onreadystatechange = function () {
-              if ((this.readyState == 4) && (this.status == 200)) {
+              if ((this.readyState == 4) && (this.status == 200))
+              {
                   // console.log("after getting response" + xhttp.responseText);
                   var jsonresponse = JSON.parse(this.responseText);
               }
@@ -221,6 +215,8 @@ function resetform() {
                         document.getElementById('userid').value="";
                         document.getElementById("pass").value="";
                         document.getElementById("txtCompare").value="";
+                        document.getElementById('SignInIcon').style.display = 'block';
+                        //document.getElementById('btn').style.display = 'block';
                         var el = document.getElementById('LogoutOption');
                         el.style.display = 'none';
 
