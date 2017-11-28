@@ -37,6 +37,10 @@ function RegistrationForm() {
           document.getElementById("errorBox").innerHTML = "enter the password";
           return false;
       }
+      else if (!emailRegex.test(fpassword)) {
+          document.getElementById('demo').innerHTML = "enter the valid password";
+          return false;
+      }
       else if (rpass == "") {
           document.getElementById("errorBox").innerHTML = "enter confirm password";
           return false;
@@ -60,7 +64,7 @@ function RegistrationForm() {
       else
       {
           var xhttp = new XMLHttpRequest();
-          var url = "http://localhost:3010/registration";
+          var url = "http://localhost:3010/Registration_form";
           var registerReq = {
               firstname: document.getElementById("FirstNameText").value,
               lastname: document.getElementById("Lname_box").value,
