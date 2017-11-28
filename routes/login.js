@@ -95,7 +95,7 @@ router.all('/',function (req, res)
                             });
                             console.log("Updated Database");
                             req.session.user_id=usermailid;
-                            var sesstimeout = 60000;
+                            var sesstimeout = 300000;
                             req.session.logintype=provider;
                             req.session.cookie.expires = new Date(Date.now() + sesstimeout);
                             res.locals.user_id=req.session.user_id;
@@ -156,7 +156,7 @@ router.all('/',function (req, res)
         });
         req.session.user_id=usermailid;
         req.session.logintype=provider;
-        var sesstimeout = 60000;
+        var sesstimeout = 300000;
         req.session.cookie.expires = new Date(Date.now() + sesstimeout);
     }
     else if(provider=="google")
@@ -198,9 +198,8 @@ router.all('/',function (req, res)
         });
         req.session.user_id=usermailid;
         req.session.logintype=provider;
-        var sesstimeout = 60000;
+        var sesstimeout = 300000;
         req.session.cookie.expires = new Date(Date.now() + sesstimeout);
     }
 });
-
 module.exports = router;

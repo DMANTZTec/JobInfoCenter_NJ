@@ -86,8 +86,13 @@ function RegistrationForm() {
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
           xhttp.onreadystatechange = function () {
               if ((this.readyState == 4) && (this.status == 200)) {
-                  // console.log("after getting response" + xhttp.responseText);
+                  console.log("after getting response" + xhttp.responseText);
                   var jsonresponse = JSON.parse(this.responseText);
+                  if (jsonresponse.status == "success") {
+                      document.getElementById('Registration_form').style.display = "none";
+                      document.getElementById('registersuccess').innerHTML = "You are successfully registered click here to";
+                      document.getElementById('registersuccess').innerHTML = '<a onclick="loginform();">Login</a>';
+                  }
               }
           };
           xhttp.send(params);
@@ -529,20 +534,16 @@ function fbLogout() {
 
 //Global script
 
-window.onclick = function(event)
+/*window.onclick = function(event)
 {
-
     console.log("window clicked");
     console.log(document.getElementById('Registration_form').style.display);
-
    // if (document.getElementById('Registration_form').style.display == "block"){
      //   console.log("Registration Form is Active")
-
      if (!event.target == document.getElementById('Registration_form'))
     {
         console.log('clicked on registration form');
        // document.getElementById('Registration_form').style.display = "block";
-
     }
     else {
         console.log('clicked outside of registration form');
@@ -550,6 +551,6 @@ window.onclick = function(event)
         // document.getElementById('login1').style.display = "block";
     }
    // }
-    }
+}*/
 
 
