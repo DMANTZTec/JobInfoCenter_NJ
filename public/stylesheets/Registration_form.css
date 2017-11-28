@@ -520,7 +520,9 @@
     border-style:solid;
     font-family:Times New Roman;
     font-size:14px;
-    color:rgba(230,212,230,1);
+    text-align: center;
+    font-weight: bold;
+    color:rgba(81,81,81,1);
     line-height:30px;
 
 }

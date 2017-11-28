@@ -1,5 +1,4 @@
-function RegistrationForm()
-{
+function RegistrationForm() {
     var element = document.getElementById("Registration_form");
     element.style.display = "block";
     var element1 = document.getElementById("login1");
@@ -11,7 +10,7 @@ function RegistrationForm()
       //GenerateCaptcha();
       var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
       var lreg = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
-      var fname = document.getElementById("Fname_box").value;
+      var fname = document.getElementById("FirstNameText").value;
       var lname = document.getElementById("Lname_box").value;
       var femail = document.getElementById("Email_box").value;
       var fpassword = document.getElementById("Password_box").value;
@@ -60,10 +59,11 @@ function RegistrationForm()
           return false;
       }
 //     else if (fname != '' && lname != '' && femail != '' && fpassword != '' && rpass != '' && captcha1 != '') ;
-      //    {
-      //      document.getElementById("errorBox").innerHTML = "form submitted successfully";
+  //    {
+    //      document.getElementById("errorBox").innerHTML = "form submitted successfully";
       //}
-      else {
+      else
+      {
           var xhttp = new XMLHttpRequest();
           var url = "http://localhost:3010/Registration_form";
           var registerReq = {
@@ -72,14 +72,20 @@ function RegistrationForm()
               email: document.getElementById("Email_box").value,
               password: document.getElementById("Password_box").value
           };
+
+          /*var registerReq={firstname: "teja",
+              lastname: "golusula",
+              email: "teja1@gmail.com",
+              password: "Teja@22",
+
+          };*/
           var params = JSON.stringify(registerReq);
           console.log(params);
           var params = "inputJsonStr" + "=" + params;
           xhttp.open("POST", url, true);
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
           xhttp.onreadystatechange = function () {
-              if ((this.readyState == 4) && (this.status == 200))
-              {
+              if ((this.readyState == 4) && (this.status == 200)) {
                   // console.log("after getting response" + xhttp.responseText);
                   var jsonresponse = JSON.parse(this.responseText);
               }
@@ -215,8 +221,6 @@ function resetform() {
                         document.getElementById('userid').value="";
                         document.getElementById("pass").value="";
                         document.getElementById("txtCompare").value="";
-                        document.getElementById('SignInIcon').style.display = 'block';
-                        //document.getElementById('btn').style.display = 'block';
                         var el = document.getElementById('LogoutOption');
                         el.style.display = 'none';
 
