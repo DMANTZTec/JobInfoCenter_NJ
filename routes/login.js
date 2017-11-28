@@ -95,9 +95,9 @@ router.all('/',function (req, res)
                             });
                             console.log("Updated Database");
                             req.session.user_id=usermailid;
-                            var sesstimeout = 300000;
                             req.session.logintype=provider;
-                            req.session.cookie.expires = new Date(Date.now() + sesstimeout);
+                            var sesstimeout = 300000;
+                            req.session.maxAge = sesstimeout;
                             res.locals.user_id=req.session.user_id;
                         }
                         else {
@@ -157,7 +157,7 @@ router.all('/',function (req, res)
         req.session.user_id=usermailid;
         req.session.logintype=provider;
         var sesstimeout = 300000;
-        req.session.cookie.expires = new Date(Date.now() + sesstimeout);
+        req.session.maxAge = sesstimeout;
     }
     else if(provider=="google")
     {
@@ -199,7 +199,7 @@ router.all('/',function (req, res)
         req.session.user_id=usermailid;
         req.session.logintype=provider;
         var sesstimeout = 300000;
-        req.session.cookie.expires = new Date(Date.now() + sesstimeout);
+        req.session.maxAge = sesstimeout;
     }
 });
 module.exports = router;

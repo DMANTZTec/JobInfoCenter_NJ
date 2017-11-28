@@ -72,13 +72,6 @@ function RegistrationForm() {
               email: document.getElementById("Email_box").value,
               password: document.getElementById("Password_box").value
           };
-
-          /*var registerReq={firstname: "teja",
-              lastname: "golusula",
-              email: "teja1@gmail.com",
-              password: "Teja@22",
-
-          };*/
           var params = JSON.stringify(registerReq);
           console.log(params);
           var params = "inputJsonStr" + "=" + params;
@@ -90,8 +83,8 @@ function RegistrationForm() {
                   var jsonresponse = JSON.parse(this.responseText);
                   if (jsonresponse.status == "success") {
                       document.getElementById('Registration_form').style.display = "none";
-                      document.getElementById('registersuccess').innerHTML = "You are successfully registered click here to";
-                      document.getElementById('registersuccess').innerHTML = '<a onclick="loginform();">Login</a>';
+                      document.getElementById('registersuccess').innerHTML = "You are successfully registered click here to"+
+                          '<a onclick="loginform();">Login</a>';
                   }
               }
           };
@@ -228,7 +221,6 @@ function resetform() {
                         document.getElementById("txtCompare").value="";
                         var el = document.getElementById('LogoutOption');
                         el.style.display = 'none';
-
                     }
                     else
                     {
