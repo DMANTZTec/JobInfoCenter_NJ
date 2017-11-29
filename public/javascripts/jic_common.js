@@ -93,8 +93,8 @@ function RegistrationForm() {
                       document.getElementById('Registration_form').style.display = "none";
                       document.getElementById('registersuccess').innerHTML = "You are successfully registered click here to"+
                           '<a onclick="loginform();">Login</a>';
-                      document.getElementById('registersuccess').innerHTML = "You are successfully registered click here to"+
-                          '<a onclick="loginform();">Login</a>';
+                    //  document.getElementById('registersuccess').innerHTML = "You are successfully registered click here to"+
+                       //   '<a onclick="loginform();">Login</a>';
                       //document.getElementById('registersuccess').style.display = "none";
                       //alert("You are successfully registered click here to" +
                         //  '<a onclick=\"loginform();\">Login</a>');
