@@ -1,13 +1,16 @@
 
 
-    <div id="errorBox"></div>
+
 <div id="Registration_form" style="display: none">
+    <div id="errorBox"></div>
+    <span id='message'></span>
     <div id="Registration_Title">
                  Registration Form
     </div>
     <div id="First_Name">First Name</div>
     <div id="Fname_box">
-    <input class="FirstNameText" type="text"  placeholder="firstname" />
+        <form id="Registration">
+        <input  id="FirstNameText" type="text" placeholder="Firstname"/>
     </div>
 
     <div id="Last_Name">
@@ -24,35 +27,24 @@
             Password
         </span>
     </div>
-
-<div id="confirm_password">
+    <div id="confirm_password">
         <span id="c_pwd">
             Confirm Password<br/>
         </span>
-</div>
- <input type="text" id="Lname_box" placeholder="lastname"/>
+    </div>
+     <input type="text" id="Lname_box" placeholder="lastname"/>
     <input type="text" id="Email_box" placeholder="e-mail"/>
     <input type="password" id="Password_box" placeholder="password"/>
     <input type="password" id="Confirm_pwd_box" placeholder="confirm_password"/>
     <input type="text" id="Enter_Captcha_box" placeholder="Enter Captha Text"/>
-    <input type="text" id="Captcha" placeholder=""/>
-
+    <input type="text" id="Captcha"/>
     <div id="_26">
-
     </div>
-
     <div id="_27">
-
     </div>
-
-    <div id="captcha_image"></div>
-    <button id="Submit">
-        Submit
-
-    </button>
-    <button id="Reset">
-        Reset
-
-    </button>
+    <input type="button"  id="captcha_image"  onclick= "GenerateCaptcha1()" />
+    </form>
+    <button id="Submit" onclick="validateRegistration()">Submit</button>
+    <button id="Reset" onclick= "resetform()">Reset </button>
 </div>
-
+<div id="registersuccess"></div>

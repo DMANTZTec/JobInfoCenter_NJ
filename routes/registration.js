@@ -1,7 +1,7 @@
 var express    = require('express');
 var router     = express.Router();
-var app = express();
 var bodyParser = require('body-parser');
+var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 router.all('/',function (req, res)
@@ -13,7 +13,8 @@ router.all('/',function (req, res)
     var firstname=jsonRequest.firstname,lastname=jsonRequest.lastname,email=jsonRequest.email,
         password=jsonRequest.password,dateOfBirth=jsonRequest.dateOfbirth,gender=jsonRequest.gender,
         phone=jsonRequest.phone,address=jsonRequest.address;
-    req.getConnection(function (err,connection) {
+    req.getConnection(function (err,connection)
+    {
         if (err) {
             console.error('error connecting: ' + err.stack);
             return;
@@ -25,8 +26,9 @@ router.all('/',function (req, res)
                 throw err;
                 var response = {status: "failed", reason: err};
                 res.send(response);
+                console.log("1 record inserted");
             }
-            console.log("1 record inserted");
+
             var response = {status: "success"};
             res.send(response);
         });
