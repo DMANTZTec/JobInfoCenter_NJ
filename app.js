@@ -41,7 +41,8 @@ app.use(session({
    secret: '2C44-4D44-W',
     store: sessionStore,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    rolling:true
 }));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
