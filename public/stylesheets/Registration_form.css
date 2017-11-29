@@ -568,7 +568,6 @@
 }
 #Submit {
     position: relative;
-
     width:25%;
     height:30px;
     left:23%;
@@ -658,5 +657,9 @@
     font-size:17px;
     color:rgba(0,0,0,1);
     line-height:0px;
+
+}
+#message
+{
 
 }

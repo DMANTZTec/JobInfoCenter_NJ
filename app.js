@@ -29,7 +29,7 @@ var accessLogStream = rfs('access.log', {
 });
 var app = express();
 var options = {
-    host    : '10.0.0.7',
+    host    : '10.0.0.6',
     port    : '3306',
     user    : 'shanti',
     password: 'secret',

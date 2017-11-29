@@ -26,8 +26,9 @@ router.all('/',function (req, res)
                 throw err;
                 var response = {status: "failed", reason: err};
                 res.send(response);
+                console.log("1 record inserted");
             }
-            console.log("1 record inserted");
+
             var response = {status: "success"};
             res.send(response);
         });
