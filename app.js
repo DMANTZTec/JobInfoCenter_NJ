@@ -4,6 +4,7 @@ var fs=require('fs');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var debug = require('node-inspector');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var MySQLStore = require('express-mysql-session');
@@ -25,11 +26,12 @@ fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 //var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 var accessLogStream = rfs('access.log', {
     interval: '1d', // rotate daily
+    initialRotation:false,
     path: logDirectory
 });
 var app = express();
 var options = {
-    host    : '10.0.0.6',
+    host    : '10.0.0.5',
     port    : '3306',
     user    : 'shanti',
     password: 'secret',
@@ -49,7 +51,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('tiny', {stream: accessLogStream}));
+app.use(logger('combined', {stream: accessLogStream}));
 app.use(logger('dev',{
     skip: function (req, res) { return res.statusCode < 400 }
 }));
