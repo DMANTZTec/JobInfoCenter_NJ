@@ -22,6 +22,7 @@ var mysql      = require('mysql');
 var myconnection=require('express-myconnection');
 var rfs = require('rotating-file-stream');
 var logDirectory = path.join(__dirname, 'log');
+
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 //var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 var accessLogStream = rfs('access.log', {
