@@ -1,0 +1,92 @@
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheets/Contact_Section.css"/>
+</head>
+<body>
+<div id="Contact_Section">
+    <div id="C_S">
+    </div>
+    <div id="Contact_Us">
+        <h2 id="C_U">
+            Contact Us<br/>
+        </h2>
+    </div>
+
+    <div id="Sub_Title">
+        <h3 id="S_T">
+            Swing by for a cup of coffee, or leave us a message<br/>
+        </h3>
+    </div>
+    <div id="image">
+    </div>
+    <div id="image_box">
+    </div>
+    <div id="First_Name" class="nm-label">
+      <span id="F_N">
+            First Name<br/>
+        </span>
+    </div>
+    <input type="text" id="Fname_text_box" placeholder="Your name.."/>
+    <div id="Last_Name">
+      <span id="L_N">
+            Last Name<br/>
+        </span>
+    </div>
+    <input type="text" id="Lname_box" placeholder="Your last name.."/>
+    <div id="Country">
+      <span id="C">
+            Country<br/>
+        </span>
+    </div>
+    <select id="Country_box">
+        <option>
+            Australia
+        </option>
+        <option>
+            Canada
+        </option>
+        <option>
+            USA
+        </option>
+    </select>
+    <div id="Subject">
+      <span id="S">
+            Subject<br/>
+        </span>
+    </div>
+    <textarea id="Subject_box">Write something..</textarea>
+    <button id="Submit">
+        Submit
+
+    </button>
+
+</div>
+<!--
+    <script>
+        function myMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(51.5, -0.12),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            }
+            var map = new google.maps.Map(document.getElementById("image"), mapOptions);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+  -->
+<script>
+    function myMap() {
+        var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+        var mapCanvas = document.getElementById("image");
+        var mapOptions = {center: myCenter, zoom: 12};
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({position:myCenter});
+        marker.setMap(map);
+
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+</body>
+</html>
