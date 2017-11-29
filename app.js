@@ -51,7 +51,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('combined', {stream: accessLogStream}));
+app.use(logger(':date[clf] :method :url',{stream: accessLogStream}));
+//app.use(logger('combined', {stream: accessLogStream}));
 app.use(logger('dev',{
     skip: function (req, res) { return res.statusCode < 400 }
 }));
