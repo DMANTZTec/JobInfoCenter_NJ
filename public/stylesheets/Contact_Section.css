@@ -360,12 +360,88 @@
     color:#515151;
     line-height:30px;
 }
+#E-mail {
+    position: relative;
+    width:60px;
+    height:25px;
+    left:578px;
+    top:-225%;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    border-width:1px;
+    text-align:left;
+    font-family:Times New Roman;
+    font-size:22px;
+    color:rgba(82,82,82,1);
+    overflow:visible;
+    line-height:22px;
+    white-space:nowrap;
+
+}
+#E_M {
+    text-align:left;
+    left:0px;
+    width:60px;
+    margin:0px;
+    font-size:22px;
+    line-height:22px;
+    top:2px;
+
+}
+#Email_box {
+    position: relative;
+    width:220px;
+    height:30px;
+    left:579px;
+    top:-1720px;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    border-width:1px;
+    padding-left:0px;
+    padding-top:0px;
+    padding-right:0px;
+    padding-bottom:0px;
+    border-bottom-left-radius:4px;
+    -webkit-border-bottom-left-radius:4px;
+    -moz-border-bottom-left-radius:4px;
+    -ms-border-bottom-left-radius:4px;
+    -o-border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    -webkit-border-bottom-right-radius:4px;
+    -moz-border-bottom-right-radius:4px;
+    -ms-border-bottom-right-radius:4px;
+    -o-border-bottom-right-radius:4px;
+    border-top-left-radius:4px;
+    -webkit-border-top-left-radius:4px;
+    -moz-border-top-left-radius:4px;
+    -ms-border-top-left-radius:4px;
+    -o-border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    -moz-border-top-right-radius:4px;
+    -ms-border-top-right-radius:4px;
+    -o-border-top-right-radius:4px;
+    overflow:hidden;
+    background:#fff;
+    border-color:rgba(0,0,0,1);
+    border-style:solid;
+    font-family:Times New Roman;
+    font-size:17px;
+    color:#515151;
+    line-height:30px;
+}
 #Country {
     position: relative;
     width:73px;
     height:25px;
     left:578px;
-    top:-225%;
+    top:-220%;
     opacity:1;
     margin-left:0px;
     margin-top:0px;
@@ -395,7 +471,7 @@
     width:220px;
     height:30px;
     left:580px;
-    top:-1720px;
+    top:-1680px;
     opacity:1;
     margin-left:0px;
     margin-top:0px;
@@ -439,7 +515,7 @@
     width:66px;
     height:25px;
     left:578px;
-    top:-220%;
+    top:-215%;
     opacity:1;
     margin-left:0px;
     margin-top:0px;
@@ -470,7 +546,7 @@
     width:264px;
     height:93px;
     left:580px;
-    top:-1680px;
+    top:-1640px;
     opacity:1;
     margin-left:0px;
     margin-top:0px;
@@ -515,7 +591,7 @@
     width:80px;
     height:30px;
     left:30.5%;
-    top:-1620px;
+    top:-1600px;
     opacity:1;
     margin-left:0px;
     margin-top:0px;
@@ -555,4 +631,48 @@
     color:#515151;
     line-height:0px;
 }
-<br>
+#Reset {
+    position: relative;
+    width:80px;
+    height:30px;
+    left:32%;
+    top:-1600px;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    border-width:1px;
+    padding-left:0px;
+    padding-top:0px;
+    padding-right:0px;
+    padding-bottom:2px;
+    border-bottom-left-radius:4px;
+    -webkit-border-bottom-left-radius:4px;
+    -moz-border-bottom-left-radius:4px;
+    -ms-border-bottom-left-radius:4px;
+    -o-border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    -webkit-border-bottom-right-radius:4px;
+    -moz-border-bottom-right-radius:4px;
+    -ms-border-bottom-right-radius:4px;
+    -o-border-bottom-right-radius:4px;
+    border-top-left-radius:4px;
+    -webkit-border-top-left-radius:4px;
+    -moz-border-top-left-radius:4px;
+    -ms-border-top-left-radius:4px;
+    -o-border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    -webkit-border-top-right-radius:4px;
+    -moz-border-top-right-radius:4px;
+    -ms-border-top-right-radius:4px;
+    -o-border-top-right-radius:4px;
+    overflow:hidden;
+    border-color:#ccc;
+    border-style:solid;
+    background:#fff;
+    font-family:Times New Roman;
+    font-size:17px;
+    color:rgba(0,0,0,1);
+    line-height:0px;
+}
