@@ -16,6 +16,7 @@ var Registration_form = require('./routes/registration');
 var loginSuccess = require('./routes/loginSuccess');
 var search = require('./routes/search');
 var home = require('./routes/home');
+
 var Contact_Section= require('./routes/Contact_Section');
 var logout = require('./routes/logout');
 var adbanner = require('./public/javascripts/adbanner');
