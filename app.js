@@ -16,6 +16,7 @@ var Registration_form = require('./routes/registration');
 var loginSuccess = require('./routes/loginSuccess');
 var search = require('./routes/search');
 var home = require('./routes/home');
+var Contact_Section= require('./routes/Contact_Section');
 var logout = require('./routes/logout');
 var adbanner = require('./public/javascripts/adbanner');
 var mysql      = require('mysql');
@@ -68,6 +69,7 @@ app.use('/login', login);
 app.use('/logout', logout);
 app.use('/loginSuccess', loginSuccess);
 app.use('/Registration_form',Registration_form);
+app.use('/Contact_Section',Contact_Section);
 //app.use('/adbanner',adbanner);
 //app.use('/users', users);
 // catch 404 and forward to error handler
