@@ -1,37 +1,23 @@
 
 <div id="Registration_form" style="display: none">
     <div id="errorBox"></div>
-
-    <div id="Registration_Title">
-                 Registration Form
-    </div>
-    <div id="First_Name">First Name</div>
-    <div id="Fname_box">
+    <div id="Registration_Title">Registration Form</div>
         <form id="Registration">
-
-        <input  id="FirstNameText" type="text" placeholder="Firstname"/>
-    </div>
-
-    <div id="Last_Name">
-               Last Name
-    </div>
-
-    <div id="E-mail">
-        <span id="E_M">
-            E-mail<br/>
-        </span>
+            <div id="First_Name">First Name</div>
+            <div id="Fname_box">
+        <input  id="FirstNameText" type="text" placeholder="Firstname"/></div>
+            <div id="Last_Name">
+            <span id="L_N">Last Name<br/></span>
+            </div>
+            <div id="E-mail">
+        <span id="E_M">E-mail<br/></span>
     </div>
     <div id="Password">
-        <span id="PWD">
-            Password
-        </span>
+        <span id="PWD">Password</span>
     </div>
     <div id="confirm_password">
-        <span id="c_pwd">
-            Confirm Password<br/>
-        </span>
+        <span id="c_pwd">Confirm Password<br/></span>
     </div>
-
      <input type="text" id="Lname_box" placeholder="lastname"/>
     <input type="text" id="Email_box" placeholder="e-mail"/>
     <input type="password" id="Password_box"  placeholder="password" onkeyup='check();'/>
@@ -43,15 +29,12 @@
     </div>
     <div id="_27">
     </div>
-
     <input type="button"  id="captcha_image"  onclick= "GenerateCaptcha1()" />
     </form>
     <button id="Submit" onclick="validateRegistration()">Submit</button>
     <button id="Reset" onclick= "resetform()">Reset </button>
 </div>
-
 <div id="registersuccess" class="modal">
-
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>

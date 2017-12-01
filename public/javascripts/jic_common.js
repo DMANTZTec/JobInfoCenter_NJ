@@ -1,3 +1,8 @@
+function contactdisplay()
+{
+    var element = document.getElementById("Contact_Section");
+    element.style.display = "block";
+}
 function ContactSection() {
     var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
     var fname = document.getElementById("Fname_text_box").value;

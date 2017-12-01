@@ -1,8 +1,9 @@
 #Contact_Section {
+    position: relative;
     width:1024px;
     height:768px;
-    left:null;
-    top:null;
+    left: null;
+    top: null;
     opacity:1;
     margin-left:auto;
     margin-top:0px;
@@ -209,7 +210,7 @@
     -o-border-top-right-radius:0px;
     overflow:visible;
 }
-#First_Name {
+#cFirst_Name {
     position: relative;
     width:99px;
     height:25px;
@@ -285,7 +286,7 @@
     color:#515151;
     line-height:30px;
 }
-#Last_Name {
+#cLast_Name {
     position: relative;
     width:96px;
     height:25px;
@@ -305,7 +306,7 @@
     line-height:22px;
     white-space:nowrap;
 }
-#L_N {
+#cL_N {
 
     text-align:left;
     left:0px;
@@ -315,7 +316,7 @@
     line-height:22px;
     top:2px;
 }
-#Lname_box {
+#cLname_box {
     position: relative;
     width:220px;
     height:30px;
@@ -360,7 +361,7 @@
     color:#515151;
     line-height:30px;
 }
-#E-mail {
+#cE-mail {
     position: relative;
     width:60px;
     height:25px;
@@ -381,7 +382,7 @@
     white-space:nowrap;
 
 }
-#E_M {
+#cE_M {
     text-align:left;
     left:0px;
     width:60px;
@@ -391,7 +392,7 @@
     top:2px;
 
 }
-#Email_box {
+#cEmail_box {
     position: relative;
     width:220px;
     height:30px;
@@ -586,7 +587,7 @@
     color:#515151;
     line-height:19px;
 }
-#Submit {
+#cSubmit {
     position: relative;
     width:80px;
     height:30px;
@@ -631,7 +632,7 @@
     color:#515151;
     line-height:0px;
 }
-#Reset {
+#cReset {
     position: relative;
     width:80px;
     height:30px;
@@ -676,6 +677,4 @@
     color:rgba(0,0,0,1);
     line-height:0px;
 }
-=======
-}
->>>>>>> origin/master
+
