@@ -48,7 +48,7 @@ router.all('/',function (req, res)
                 console.error('error connecting: ' + err.stack);
                 return;
             }
-            console.log("UserId : " + usermailid);
+            //console.log("UserId : " + usermailid);
             var select='SELECT * FROM registeredusers WHERE email = ? limit 1';
             connection.query(select, [usermailid], function (error, results, fields) {
                 if (error) {
@@ -100,7 +100,8 @@ router.all('/',function (req, res)
                             req.session.maxAge = sesstimeout;
                             res.locals.user_id=req.session.user_id;
                         }
-                        else {
+                        else
+                        {
                             res.send({
                                 "status": 204,
                                 "reason": "Email and password does not match"

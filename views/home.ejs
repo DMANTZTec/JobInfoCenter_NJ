@@ -10,14 +10,18 @@
   <meta name="google-signin-client_id"
         content="656239353226-jgtpuj5m6o1sp3b972f74nhvs4vk28lg.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js"></script>
+
+  <link rel='stylesheet' href='/stylesheets/Contact_Section.css' />
+  <script src="javascripts/Contact_Section.js"> </script>
   <!--
   <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
   -->
 
 </head>
 <body>
-
+<button id="contact" onclick="contactdisplay()">Contact </button>
 <div class="w3-container" >
+    <% include Contact_Section %>
     <% include Registration_form %>
     <% include login  %>
     <% include searchblock %>

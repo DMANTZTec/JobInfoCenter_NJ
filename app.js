@@ -20,6 +20,7 @@ var adbanner = require('./public/javascripts/adbanner');
 var mysql      = require('mysql');
 var myconnection=require('express-myconnection');
 var rfs = require('rotating-file-stream');
+var Contact_Section = require('./routes/Contact_Section');
 var logDirectory = path.join(__dirname, 'log');
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 //var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
@@ -29,7 +30,7 @@ var accessLogStream = rfs('access.log', {
 });
 var app = express();
 var options = {
-    host    : '10.0.0.6',
+    host    : '10.0.0.2',
     port    : '3306',
     user    : 'shanti',
     password: 'secret',
@@ -64,6 +65,7 @@ app.use('/login', login);
 app.use('/logout', logout);
 app.use('/loginSuccess', loginSuccess);
 app.use('/Registration_form',Registration_form);
+app.use('/Contact_Section', Contact_Section);
 //app.use('/adbanner',adbanner);
 //app.use('/users', users);
 // catch 404 and forward to error handler
