@@ -4,6 +4,7 @@ var fs=require('fs');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var debug = require('node-inspector');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var MySQLStore = require('express-mysql-session');
@@ -22,15 +23,17 @@ var myconnection=require('express-myconnection');
 var rfs = require('rotating-file-stream');
 var Contact_Section = require('./routes/Contact_Section');
 var logDirectory = path.join(__dirname, 'log');
+
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 //var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 var accessLogStream = rfs('access.log', {
     interval: '1d', // rotate daily
+    initialRotation:false,
     path: logDirectory
 });
 var app = express();
 var options = {
-    host    : '10.0.0.2',
+    host    : '10.0.0.6',
     port    : '3306',
     user    : 'shanti',
     password: 'secret',
