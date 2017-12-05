@@ -527,7 +527,7 @@
       <workItem from="1511927985625" duration="17950000" />
       <workItem from="1512102957936" duration="12198000" />
       <workItem from="1512193011764" duration="717000" />
-      <workItem from="1512447181992" duration="5115000" />
+      <workItem from="1512447181992" duration="5142000" />
     </task>
     <task id="LOCAL-00001" summary="added xmlhttprequest and solr node">
       <created>1509711003309</created>
@@ -732,11 +732,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512472864317</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added xmlhttprequest and solr node">
+      <created>1512473375797</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1512473375797</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250332000" />
+    <option name="totallyTimeSpent" value="250359000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
