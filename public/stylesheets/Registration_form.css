@@ -99,7 +99,8 @@
 }
 .FirstNameText{
     position:relative;
-    width: 100%;
+    width: 25%;
+    height:30%;
     border-bottom-left-radius:4px;
     -webkit-border-bottom-left-radius:4px;
     -moz-border-bottom-left-radius:4px;
