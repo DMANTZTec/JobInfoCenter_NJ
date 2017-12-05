@@ -22,7 +22,6 @@ router.all('/', function (req, res) {
     }
     else
         var usermailid = jsonRequest.User, userpassword = jsonRequest.password, provider = "native";
-
     function getDateTime() {
         var date = new Date();
         var hour = date.getHours();
