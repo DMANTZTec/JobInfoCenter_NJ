@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b58453ce-96f4-4c2b-adbd-02098cf5f5e4" name="Default" comment="" />
+    <list default="true" id="b58453ce-96f4-4c2b-adbd-02098cf5f5e4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="vcs.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -525,7 +527,7 @@
       <workItem from="1511927985625" duration="17950000" />
       <workItem from="1512102957936" duration="12198000" />
       <workItem from="1512193011764" duration="717000" />
-      <workItem from="1512447181992" duration="3920000" />
+      <workItem from="1512447181992" duration="4609000" />
     </task>
     <task id="LOCAL-00001" summary="added xmlhttprequest and solr node">
       <created>1509711003309</created>
@@ -727,7 +729,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249137000" />
+    <option name="totallyTimeSpent" value="249826000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
