@@ -1,0 +1,390 @@
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /home HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /stylesheets/livesearch2.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /stylesheets/login1.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /stylesheets/Registration_form.css HTTP/1.1" 200 17645 "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /javascripts/jic_common.js HTTP/1.1" 200 28521 "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /images/signin1.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /images/LoginWithFacebook.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /images/Filter.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /images/icons8-Share-50.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /images/businessmen-42691_1280.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /images/entrepreneur-696959_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /images/thumb-2480775_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:50:54 +0000] "GET /images/board-2434016_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /home HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /stylesheets/livesearch2.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /stylesheets/login1.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /stylesheets/Registration_form.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /javascripts/jic_common.js HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /images/signin1.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /images/LoginWithFacebook.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /images/Filter.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /images/icons8-Share-50.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /images/businessmen-42691_1280.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /images/entrepreneur-696959_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /images/thumb-2480775_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:51:45 +0000] "GET /images/board-2434016_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /home HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /stylesheets/livesearch2.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /stylesheets/login1.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /stylesheets/Registration_form.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /javascripts/jic_common.js HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /images/signin1.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /images/LoginWithFacebook.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /images/Filter.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /images/icons8-Share-50.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /images/businessmen-42691_1280.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /images/entrepreneur-696959_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /images/thumb-2480775_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:52:14 +0000] "GET /images/board-2434016_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /home HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /stylesheets/livesearch2.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /stylesheets/login1.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /stylesheets/Registration_form.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /javascripts/jic_common.js HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /images/signin1.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /images/LoginWithFacebook.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /images/Filter.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /images/icons8-Share-50.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /images/businessmen-42691_1280.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /images/entrepreneur-696959_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /images/thumb-2480775_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:53:39 +0000] "GET /images/board-2434016_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /home HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /stylesheets/livesearch2.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /stylesheets/login1.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /stylesheets/Registration_form.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /javascripts/jic_common.js HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /images/signin1.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /images/LoginWithFacebook.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /images/Filter.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /images/icons8-Share-50.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /images/businessmen-42691_1280.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /images/entrepreneur-696959_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /images/thumb-2480775_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:54:09 +0000] "GET /images/board-2434016_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - GET /home HTTP/1.1 304 - - 25.536 ms
+::1 - GET /stylesheets/livesearch2.css HTTP/1.1 304 - - 7.219 ms
+::1 - GET /stylesheets/login1.css HTTP/1.1 304 - - 7.550 ms
+::1 - GET /stylesheets/Registration_form.css HTTP/1.1 304 - - 8.287 ms
+::1 - GET /javascripts/jic_common.js HTTP/1.1 304 - - 10.209 ms
+::1 - GET /images/signin1.png HTTP/1.1 304 - - 0.592 ms
+::1 - GET /images/LoginWithFacebook.png HTTP/1.1 304 - - 1.372 ms
+::1 - GET /images/Filter.png HTTP/1.1 304 - - 0.528 ms
+::1 - GET /images/icons8-Share-50.png HTTP/1.1 304 - - 3.301 ms
+::1 - GET /images/businessmen-42691_1280.png HTTP/1.1 304 - - 4.832 ms
+::1 - GET /images/entrepreneur-696959_1920.jpg HTTP/1.1 304 - - 4.200 ms
+::1 - GET /images/thumb-2480775_1920.jpg HTTP/1.1 304 - - 4.216 ms
+::1 - GET /images/board-2434016_1920.jpg HTTP/1.1 304 - - 2.952 ms
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /home HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /stylesheets/livesearch2.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /stylesheets/login1.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /stylesheets/Registration_form.css HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /javascripts/jic_common.js HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /images/signin1.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /images/LoginWithFacebook.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /images/Filter.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /images/icons8-Share-50.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /images/businessmen-42691_1280.png HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /images/entrepreneur-696959_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /images/thumb-2480775_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+::1 - - [29/Nov/2017:06:56:04 +0000] "GET /images/board-2434016_1920.jpg HTTP/1.1" 304 - "http://localhost:3010/home" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"
+Wed, 29 Nov 2017 06:58:59 GMT GET /home
+Wed, 29 Nov 2017 06:58:59 GMT GET /stylesheets/livesearch2.css
+Wed, 29 Nov 2017 06:58:59 GMT GET /stylesheets/login1.css
+Wed, 29 Nov 2017 06:58:59 GMT GET /stylesheets/Registration_form.css
+Wed, 29 Nov 2017 06:58:59 GMT GET /javascripts/jic_common.js
+Wed, 29 Nov 2017 06:58:59 GMT GET /images/signin1.png
+Wed, 29 Nov 2017 06:58:59 GMT GET /images/LoginWithFacebook.png
+Wed, 29 Nov 2017 06:58:59 GMT GET /images/Filter.png
+Wed, 29 Nov 2017 06:58:59 GMT GET /images/icons8-Share-50.png
+Wed, 29 Nov 2017 06:58:59 GMT GET /images/businessmen-42691_1280.png
+Wed, 29 Nov 2017 06:58:59 GMT GET /images/entrepreneur-696959_1920.jpg
+Wed, 29 Nov 2017 06:58:59 GMT GET /images/thumb-2480775_1920.jpg
+Wed, 29 Nov 2017 06:58:59 GMT GET /images/board-2434016_1920.jpg
+29/Nov/2017:06:59:23 +0000 GET /home
+29/Nov/2017:06:59:23 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:06:59:23 +0000 GET /stylesheets/login1.css
+29/Nov/2017:06:59:23 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:06:59:23 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:06:59:23 +0000 GET /images/signin1.png
+29/Nov/2017:06:59:23 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:06:59:23 +0000 GET /images/Filter.png
+29/Nov/2017:06:59:23 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:06:59:23 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:06:59:23 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:06:59:23 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:06:59:23 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:07:01:58 +0000 GET /home
+29/Nov/2017:07:02:02 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:02:02 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:02:22 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:02:22 +0000 GET /images/signin1.png
+29/Nov/2017:07:02:29 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:07:02:31 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:07:02:31 +0000 GET /images/Filter.png
+29/Nov/2017:07:02:31 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:07:02:31 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:07:02:31 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:07:02:31 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:07:02:31 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:07:03:25 +0000 GET /home
+29/Nov/2017:07:03:25 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:03:25 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:03:25 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:03:25 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:07:03:25 +0000 GET /images/signin1.png
+29/Nov/2017:07:03:25 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:07:03:25 +0000 GET /images/Filter.png
+29/Nov/2017:07:03:25 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:07:03:25 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:07:03:25 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:07:03:25 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:07:03:25 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:07:03:28 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:03:28 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:03:28 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:03:45 +0000 GET /home
+29/Nov/2017:07:03:45 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:03:45 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:03:45 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:03:45 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:07:03:45 +0000 GET /images/signin1.png
+29/Nov/2017:07:03:45 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:07:03:45 +0000 GET /images/Filter.png
+29/Nov/2017:07:03:45 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:07:03:45 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:07:03:45 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:07:03:45 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:07:03:45 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:07:15:48 +0000 GET /home
+29/Nov/2017:07:15:48 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:15:48 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:15:48 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:15:48 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:07:15:48 +0000 GET /images/signin1.png
+29/Nov/2017:07:15:48 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:07:15:48 +0000 GET /images/Filter.png
+29/Nov/2017:07:15:48 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:07:15:48 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:07:15:48 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:07:15:48 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:07:15:48 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:07:17:00 +0000 GET /home
+29/Nov/2017:07:17:00 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:17:00 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:17:00 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:17:00 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:07:17:00 +0000 GET /images/signin1.png
+29/Nov/2017:07:17:00 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:07:17:00 +0000 GET /images/Filter.png
+29/Nov/2017:07:17:00 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:07:17:00 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:07:17:00 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:07:17:00 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:07:17:00 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:07:18:39 +0000 GET /home
+29/Nov/2017:07:18:39 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:18:39 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:18:39 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:18:39 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:07:18:39 +0000 GET /images/signin1.png
+29/Nov/2017:07:18:39 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:07:18:39 +0000 GET /images/Filter.png
+29/Nov/2017:07:18:39 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:07:18:39 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:07:18:39 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:07:18:39 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:07:18:39 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:07:19:45 +0000 GET /home
+29/Nov/2017:07:19:45 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:19:45 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:19:45 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:19:45 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:07:19:45 +0000 GET /images/signin1.png
+29/Nov/2017:07:19:45 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:07:19:45 +0000 GET /images/Filter.png
+29/Nov/2017:07:19:45 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:07:19:45 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:07:19:45 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:07:19:45 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:07:19:45 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:07:46:57 +0000 GET /home
+29/Nov/2017:07:46:57 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:07:46:57 +0000 GET /stylesheets/login1.css
+29/Nov/2017:07:46:57 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:07:46:57 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:07:46:57 +0000 GET /images/signin1.png
+29/Nov/2017:07:46:57 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:07:46:57 +0000 GET /images/Filter.png
+29/Nov/2017:07:46:57 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:07:46:57 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:07:46:57 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:07:46:57 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:07:46:57 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:09:31:47 +0000 GET /home?port=5858
+29/Nov/2017:09:31:47 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:09:31:47 +0000 GET /stylesheets/login1.css
+29/Nov/2017:09:31:47 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:09:31:47 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:09:31:47 +0000 GET /images/signin1.png
+29/Nov/2017:09:31:47 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:09:31:47 +0000 GET /images/Filter.png
+29/Nov/2017:09:31:47 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:09:31:47 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:09:31:47 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:09:31:47 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:09:31:47 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:09:31:48 +0000 POST /login
+29/Nov/2017:09:57:50 +0000 GET /home
+29/Nov/2017:09:57:50 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:09:57:50 +0000 GET /stylesheets/login1.css
+29/Nov/2017:09:57:50 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:09:57:50 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:09:57:50 +0000 GET /images/signin1.png
+29/Nov/2017:09:57:50 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:09:57:50 +0000 GET /images/Filter.png
+29/Nov/2017:09:57:50 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:09:57:50 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:09:57:50 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:09:57:50 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:09:57:50 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:09:57:53 +0000 GET /home
+29/Nov/2017:09:57:53 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:09:57:53 +0000 GET /stylesheets/login1.css
+29/Nov/2017:09:57:53 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:09:57:53 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:09:57:53 +0000 GET /images/signin1.png
+29/Nov/2017:09:57:53 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:09:57:53 +0000 GET /images/Filter.png
+29/Nov/2017:09:57:53 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:09:57:53 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:09:57:53 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:09:57:53 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:09:57:53 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:09:57:55 +0000 GET /images/RecaptchaIcon2.png
+29/Nov/2017:09:57:58 +0000 POST /login
+29/Nov/2017:09:58:02 +0000 GET /home
+29/Nov/2017:09:58:02 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:09:58:02 +0000 GET /stylesheets/login1.css
+29/Nov/2017:09:58:02 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:09:58:02 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:09:58:02 +0000 GET /images/signin1.png
+29/Nov/2017:09:58:02 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:09:58:02 +0000 GET /images/Filter.png
+29/Nov/2017:09:58:02 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:09:58:02 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:09:58:02 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:09:58:02 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:09:58:02 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:09:58:02 +0000 POST /login
+29/Nov/2017:09:58:03 +0000 POST /logout
+29/Nov/2017:09:58:05 +0000 GET /home
+29/Nov/2017:09:58:05 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:09:58:05 +0000 GET /stylesheets/login1.css
+29/Nov/2017:09:58:05 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:09:58:05 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:09:58:05 +0000 GET /images/signin1.png
+29/Nov/2017:09:58:05 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:09:58:05 +0000 GET /images/Filter.png
+29/Nov/2017:09:58:05 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:09:58:05 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:09:58:05 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:09:58:05 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:09:58:05 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:10:33:09 +0000 GET /images/RecaptchaIcon2.png
+29/Nov/2017:10:33:14 +0000 GET /home
+29/Nov/2017:10:33:14 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:10:33:14 +0000 GET /stylesheets/login1.css
+29/Nov/2017:10:33:14 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:10:33:14 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:10:33:14 +0000 GET /images/signin1.png
+29/Nov/2017:10:33:14 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:10:33:14 +0000 GET /images/Filter.png
+29/Nov/2017:10:33:14 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:10:33:14 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:10:33:14 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:10:33:14 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:10:33:14 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:10:47:16 +0000 GET /home
+29/Nov/2017:10:47:16 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:10:47:16 +0000 GET /stylesheets/login1.css
+29/Nov/2017:10:47:16 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:10:47:16 +0000 GET /images/signin1.png
+29/Nov/2017:10:47:16 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:10:47:16 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:10:47:16 +0000 GET /images/Filter.png
+29/Nov/2017:10:47:16 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:10:47:16 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:10:47:16 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:10:47:16 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:10:47:16 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:11:10:49 +0000 GET /home
+29/Nov/2017:11:10:49 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:11:10:49 +0000 GET /stylesheets/login1.css
+29/Nov/2017:11:10:49 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:11:10:49 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:11:10:49 +0000 GET /images/signin1.png
+29/Nov/2017:11:10:50 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:11:10:50 +0000 GET /images/Filter.png
+29/Nov/2017:11:10:50 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:11:10:50 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:11:10:50 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:11:10:50 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:11:10:50 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:11:10:51 +0000 GET /images/RecaptchaIcon2.png
+29/Nov/2017:11:11:10 +0000 POST /login
+29/Nov/2017:11:11:20 +0000 GET /home
+29/Nov/2017:11:11:21 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:11:11:21 +0000 GET /stylesheets/login1.css
+29/Nov/2017:11:11:21 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:11:11:21 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:11:11:21 +0000 GET /images/signin1.png
+29/Nov/2017:11:11:21 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:11:11:21 +0000 GET /images/Filter.png
+29/Nov/2017:11:11:21 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:11:11:21 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:11:11:21 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:11:11:21 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:11:11:21 +0000 GET /images/board-2434016_1920.jpg
+29/Nov/2017:11:11:22 +0000 POST /logout
+29/Nov/2017:11:11:55 +0000 GET /home
+29/Nov/2017:11:11:55 +0000 GET /stylesheets/livesearch2.css
+29/Nov/2017:11:11:55 +0000 GET /stylesheets/login1.css
+29/Nov/2017:11:11:55 +0000 GET /stylesheets/Registration_form.css
+29/Nov/2017:11:11:55 +0000 GET /javascripts/jic_common.js
+29/Nov/2017:11:11:55 +0000 GET /images/signin1.png
+29/Nov/2017:11:11:55 +0000 GET /images/LoginWithFacebook.png
+29/Nov/2017:11:11:55 +0000 GET /images/Filter.png
+29/Nov/2017:11:11:55 +0000 GET /images/icons8-Share-50.png
+29/Nov/2017:11:11:55 +0000 GET /images/businessmen-42691_1280.png
+29/Nov/2017:11:11:56 +0000 GET /images/entrepreneur-696959_1920.jpg
+29/Nov/2017:11:11:56 +0000 GET /images/thumb-2480775_1920.jpg
+29/Nov/2017:11:11:56 +0000 GET /images/board-2434016_1920.jpg
+01/Dec/2017:04:51:00 +0000 GET /favicon.ico
+01/Dec/2017:05:27:34 +0000 GET /home
+01/Dec/2017:05:27:34 +0000 GET /stylesheets/livesearch2.css
+01/Dec/2017:05:27:34 +0000 GET /stylesheets/login1.css
+01/Dec/2017:05:27:34 +0000 GET /stylesheets/Registration_form.css
+01/Dec/2017:05:27:34 +0000 GET /javascripts/jic_common.js
+01/Dec/2017:05:27:34 +0000 GET /images/signin1.png
+01/Dec/2017:05:27:34 +0000 GET /images/LoginWithFacebook.png
+01/Dec/2017:05:27:34 +0000 GET /images/Filter.png
+01/Dec/2017:05:27:34 +0000 GET /images/icons8-Share-50.png
+01/Dec/2017:05:27:34 +0000 GET /images/businessmen-42691_1280.png
+01/Dec/2017:05:27:34 +0000 GET /images/entrepreneur-696959_1920.jpg
+01/Dec/2017:05:27:34 +0000 GET /images/thumb-2480775_1920.jpg
+01/Dec/2017:05:27:34 +0000 GET /images/board-2434016_1920.jpg
+01/Dec/2017:05:30:04 +0000 GET /home
+01/Dec/2017:05:30:04 +0000 GET /stylesheets/livesearch2.css
+01/Dec/2017:05:30:04 +0000 GET /stylesheets/login1.css
+01/Dec/2017:05:30:04 +0000 GET /stylesheets/Registration_form.css
+01/Dec/2017:05:30:04 +0000 GET /javascripts/jic_common.js
+01/Dec/2017:05:30:04 +0000 GET /images/signin1.png
+01/Dec/2017:05:30:04 +0000 GET /images/LoginWithFacebook.png
+01/Dec/2017:05:30:04 +0000 GET /images/Filter.png
+01/Dec/2017:05:30:04 +0000 GET /images/icons8-Share-50.png
+01/Dec/2017:05:30:04 +0000 GET /images/businessmen-42691_1280.png
+01/Dec/2017:05:30:04 +0000 GET /images/entrepreneur-696959_1920.jpg
+01/Dec/2017:05:30:04 +0000 GET /images/thumb-2480775_1920.jpg
+01/Dec/2017:05:30:04 +0000 GET /images/board-2434016_1920.jpg
