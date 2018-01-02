@@ -1,56 +1,50 @@
 function contactdisplay()
 {
-    var element = document.getElementById("Contact_Section");
+    var element = document.getElementById("Contact_Section1");
     element.style.display = "block";
 }
 function ContactSection() {
     var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
-    var fname = document.getElementById("Fname_text_box").value;
-    var lname = document.getElementById("Lname_box").value;
-    var femail = document.getElementById("Email_box").value;
+    var cfname = document.getElementById("Fname_text_box").value;
+    var clname = document.getElementById("cLname_box").value;
+    var cfemail = document.getElementById("cEmail_box1").value;
     var country = document.getElementById("Country_box").value;
     var Subject = document.getElementById("Subject_box").value;
-    if (fname == "") {
-        document.getElementById("errorBox").innerHTML = "enter the first name";
+    if (cfname == "") {
+        document.getElementById("cerrorBox").innerHTML = "enter the first name";
         return false;
     }
-    else if (lname == "") {
-        document.getElementById("errorBox").innerHTML = "enter the last name";
+    else if (clname == "") {
+        document.getElementById("cerrorBox").innerHTML = "enter the last name";
         return false;
     }
-    else if (femail == "") {
-        document.getElementById("errorBox").innerHTML = "enter the email";
+    else if (cfemail == "") {
+        document.getElementById("cerrorBox").innerHTML = "enter the email";
         return false;
     }
-    else if (!emailRegex.test(femail)) {
+    else if (!emailRegex.test(cfemail)) {
         document.getElementById("errorBox").innerHTML = "enter the valid email";
         return false;
     }
     else if (country == "") {
-        document.getElementById("errorBox").innerHTML = "select one country";
+        document.getElementById("cerrorBox").innerHTML = "select one country";
         return false;
     }
     else if (Subject == "") {
-        document.getElementById("errorBox").innerHTML = "enter the the text";
+        document.getElementById("cerrorBox").innerHTML = "enter the the text";
         return false;
     }
     else {
         var xhttp = new XMLHttpRequest();
-        var url = "http://localhost:3010/Contact_Section";
+        var url = "http://localhost:3010/contactus";
         var registerReq = {
             firstname: document.getElementById("Fname_text_box").value,
-            lastname: document.getElementById("Lname_box").value,
-            email: document.getElementById("Email_box").value,
+            lastname: document.getElementById("cLname_box").value,
+            email: document.getElementById("cEmail_box1").value,
             country: document.getElementById("Country_box").value,
-            subjct: document.getElementById("Subject_box").value
+            subject: document.getElementById("Subject_box").value
         };
 
-        /*var registerReq={firstname: "teja",
-            lastname: "golusula",
-            email: "teja1@gmail.com",
-            password: "Teja@22",
-
-        };*/
         var params = JSON.stringify(registerReq);
         console.log(params);
         var params = "inputJsonStr" + "=" + params;
@@ -60,6 +54,28 @@ function ContactSection() {
             if ((this.readyState == 4) && (this.status == 200)) {
                 console.log("after getting response" + xhttp.responseText);
                 var jsonresponse = JSON.parse(this.responseText);
+                if (jsonresponse.status == "success") {
+                    var modal = document.getElementById('contactsuccess');
+                    // Get the button that opens the modal
+                    var btn1 = document.getElementById("cSubmit");
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("cclose")[0];
+                    // When the user clicks the button, open the modal
+                    btn1.onclick = function () {
+                        modal.style.display = "block";
+                        document.getElementById("Contact_Section1").style.display = 'none';
+                    }
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
+                        modal.style.display = "none";
+                        document.getElementById("Contact_Section1").style.display = 'none';
+                    }
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                }
             }
         };
         xhttp.send(params);
@@ -67,15 +83,15 @@ function ContactSection() {
 
 }
 
-function resetform() {
-    document.getElementById("contact").reset();
+function resetform1() {
+    document.getElementById("contactform").reset();
 }
 
 function RegistrationForm() {
     var element = document.getElementById("Registration_form");
     element.style.display = "block";
     var element1 = document.getElementById("login1");
-    element1.style.display = "none";
+    element1.style.display = "block";
     GenerateCaptcha1();
     console.log("After Generating captcha");
 }
@@ -175,28 +191,49 @@ function validateRegistration() {
 // When the user clicks on <span> (x), close the modal
                     span.onclick = function() {
                         modal.style.display = "none";
+
                         document.getElementById("Registration_form").style.display = 'none';
                     }
-                    window.onclick = function(event) {
-                        if (event.target == modal) {
-                            modal.style.display = "none";
-                        }
-                    }
-                    //document.getElementById('Registration_form').style.display = "none";
-                    //document.getElementById('registersuccess').innerHTML = "You are successfully registered click here to" +
-                    //'<a id="loginclick" onclick="loginform();">Login</a>';
-                    //if(document.getElementById("loginclick").onclick()) {
-                    //  document.getElementById('registersuccess').style.display = "none";
-                    //alert("You are successfully registered click here to" +
-                    //'<a onclick=\"loginform();\">Login</a>');
-                    //}
+
                 }
-               // else (jsonresponse.status == "failed")
-                //{
-                // document.getElementById("Registration_form").innerHTML = "Re-Enter the details gain to login"
-                //}
             }
         };
+
+        // var modal = document.getElementById('registersuccess');
+// Get the button that opens the modal
+        //var btn1 = document.getElementById("Submit");
+// Get the <span> element that closes the modal
+        //var span = document.getElementsByClassName("close")[0];
+// When the user clicks the button, open the modal
+        //btn1.onclick = function() {
+        //  modal.style.display = "block";
+        //document.getElementById("Registration_form").style.display = 'none';
+        //}
+// When the user clicks on <span> (x), close the modal
+        //span.onclick = function() {
+        //  modal.style.display = "none";
+        //document.getElementById("Registration_form").style.display = 'none';
+        //}
+        //window.onclick = function(event) {
+        //  if (event.target == modal) {
+        //    modal.style.display = "none";
+        //}
+        //}
+        //document.getElementById('Registration_form').style.display = "none";
+        //document.getElementById('registersuccess').innerHTML = "You are successfully registered click here to" +
+        //'<a id="loginclick" onclick="loginform();">Login</a>';
+        //if(document.getElementById("loginclick").onclick()) {
+        //  document.getElementById('registersuccess').style.display = "none";
+        //alert("You are successfully registered click here to" +
+        //'<a onclick=\"loginform();\">Login</a>');
+        //}
+
+        // else (jsonresponse.status == "failed")
+        //{
+        // document.getElementById("Registration_form").innerHTML = "Re-Enter the details gain to login"
+        //}
+
+
         xhttp.send(params);
     }
 }
@@ -211,6 +248,9 @@ var check = function () {
         document.getElementById('message1').style.color = 'red';
         document.getElementById('message1').innerHTML = 'not matching';
     }
+}
+function resetform() {
+    document.getElementById("Registration").reset();
 }
 
 function GenerateCaptcha1() {
@@ -229,9 +269,7 @@ function removeSpaces(string) {
     return string.split(' ').join('');
 }
 
-function resetform() {
-    document.getElementById("Registration").reset();
-}
+
 
 function fa_search() {
     console.log("In fa_search()");
@@ -663,4 +701,18 @@ function fbLogout() {
    // }
 }*/
 
+window.onclick = function (event) {
+    console.log("window clicked");
+    var fRegistration = document.getElementById('Registration_form');
+    var lRegistrationLink = document.getElementById('register1');
+    console.log(fRegistration.style.display);
 
+    if (fRegistration.style.display == "block") {
+        console.log("Registration Form is Active")
+        console.log(event.target);
+        if (event.target != fRegistration && event.target != lRegistrationLink) {
+            console.log('clicked outside of registration form');
+            fRegistration.style.display = "none";
+        }
+    }
+}
