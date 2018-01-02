@@ -1,90 +1,99 @@
+<div id="test">
+    <div id="Contact_Section1" style="display: none;">
 
+        <div id="cerrorBox"></div>
+        <div id="C_S">
+        </div>
+        <div id="Contact_Us">
+            <h2 id="C_U">
+                Contact Us<br/>
+            </h2>
+        </div>
 
-<div id="Contact_Section" style="display: none;">
-    <div id="cerrorBox"></div>
-    <div id="C_S">
-    </div>
-    <div id="Contact_Us">
-        <h2 id="C_U">
-            Contact Us<br/>
-        </h2>
-    </div>
+        <div id="Sub_Title">
+            <h3 id="S_T">
+                Swing by for a cup of coffee, or leave us a message<br/>
+            </h3>
+        </div>
+        <div id="image">
+        </div>
+        <div id="image_box">
+        </div>
+        <form id="contactform">
 
-    <div id="Sub_Title">
-        <h3 id="S_T">
-            Swing by for a cup of coffee, or leave us a message<br/>
-        </h3>
-    </div>
-    <div id="image">
-    </div>
-    <div id="image_box">
-    </div>
-    <form id="contact">
-
-    <div id="cFirst_Name" class="nm-label">
+            <div id="cFirst_Name" class="nm-label">
       <span id="F_N">
             First Name<br/>
         </span>
-    </div>
-    <input type="text" id="Fname_text_box" placeholder="Your name.."/>
-    <div id="cLast_Name">
+            </div>
+            <input type="text" id="Fname_text_box" placeholder="Your name.."/>
+            <div id="cLast_Name">
       <span id="cL_N">
             Last Name<br/>
         </span>
-    </div>
-    <input type="text" id="cLname_box" placeholder="Your last name.."/>
-    <div id="cE-mail">
-      <span id="cE_M">
+            </div>
+            <input type="text" id="cLname_box" placeholder="Your last name.."/>
+            <div id="cE-mail1">
+      <span id="cE_M1">
             E-mail<br/>
         </span>
-    </div>
-    <input type="text" id="cEmail_box" placeholder="E-mail.."/>
+            </div>
+            <input type="text" id="cEmail_box1" placeholder="E-mail.."/>
 
-    <div id="Country">
+            <div id="Country">
       <span id="C">
             County<br/>
         </span>
-    </div>
-    <select id="Country_box">
-        <option>
-            Australia
-        </option>
-        <option>
-            Canada
-        </option>
-        <option>
-            USA
-        </option>
-        <option>
-            India
-        </option>
-    </select>
-    <div id="Subject">
+            </div>
+            <select id="Country_box">
+                <option>
+                    Australia
+                </option>
+                <option>
+                    Canada
+                </option>
+                <option>
+                    USA
+                </option>
+                <option>
+                    India
+                </option>
+            </select>
+            <div id="Subject">
       <span id="S">
             Subject<br/>
         </span>
+            </div>
+            <textarea id="Subject_box" placeholder="Write Something.."></textarea>
+        </form>
+        <button id="cSubmit" onclick="ContactSection()">Submit</button>
+        <button id="cReset" onclick="resetform1()">Reset </button>
     </div>
-    <textarea id="Subject_box">Write something..</textarea>
-    </form>
-    <button id="cSubmit" onclick="ContactSection()">Submit</button>
-    <button id="cReset">Reset</button>
 </div>
-<!--
-code
-    <script>
-        function myMap() {
+<div id="contactsuccess" class="cmodal">
+    <!-- Modal content -->
+    <div class="cmodal-content">
+        <span class="cclose">&times;</span>
+        <p>Thank You for Contacting us</p>
+    </div>
+
+</div>
+
+
+<!--    <script>
+        /*function myMap() {
             var mapOptions = {
                 center: new google.maps.LatLng(51.5, -0.12),
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.HYBRID
             }
             var map = new google.maps.Map(document.getElementById("image"), mapOptions);
-        }
+        }*/
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-
-<script>
-    function myMap() {
+-->
+<!--<script>
+   /* function myMap() {
         var myCenter = new google.maps.LatLng(51.508742,-0.120850);
         var mapCanvas = document.getElementById("image");
         var mapOptions = {center: myCenter, zoom: 12};
@@ -92,8 +101,9 @@ code
         var marker = new google.maps.Marker({position:myCenter});
         marker.setMap(map);
 
-    }
+    }*/
 </script>
+-->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 -->
